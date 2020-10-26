@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import requests
 import csv
 import logging
@@ -14,6 +15,8 @@ cse_tenant_name = os.environ['CSE_TENANT_NAME']
 
 # see README for explaination of this variable
 source_id = '39'
+
+# you can change this days=7 to any number - it will determine the TTL of your indicators
 expiration = (datetime.now() + timedelta(days=7)
                       ).strftime('%Y-%m-%dT%H:%M:%SZ') 
 
@@ -38,11 +41,11 @@ def import_intel(filename):
             payload = dict()
             payload['indicators'] = []
             for key, value in chunk:
-                payload["indicators"].append({
-                            "active": True,
-                            "description": value,
-                            "expiration": expiration,
-                            "value": key
+                payload['indicators'].append({
+                            'active': True,
+                            'description': value,
+                            'expiration': expiration,
+                            'value': key
                             })            
             r = requests.post(url, headers=headers, json=payload)
             if r.status_code > 201:
