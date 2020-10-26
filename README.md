@@ -41,7 +41,12 @@ pipenv install
 ```
 pipenv shell
 ```
-6. Run scripts
+6. Create your environment variables file
+```
+cp .env_sample .env
+```
+7. Update your environment variables
+8. Run scripts
 ```
 python3 foo/bar.py
 ```
