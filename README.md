@@ -2,14 +2,14 @@
 
 ## Background
 * Configuration Explained
-- There is a sample config file called sample_config.py under the root folder of this project
-- You will clone this file and create one called config.py where you actually input all of your secrets (API Keys + Access Key Pairs)
-* Parameters - explainations of what you see in sample_config.py
-- cse_api_key - Sumo Logic Cloud SIEM Enterprise API Key
-- cse_tenant_name - Sumo Logic Cloud SIEM Enterprise Tenant Name (https://{YOUR_TENANT_NAME}.jask.portal.ai)
-- cip_access_id - Sumo Logic Continuous Intelligence Platform Access ID
-- cip_access_key - Sumo Logic Continuous Intelligence Platform Access Key
-- vt_api_key - VirusTotal API Key. Enterprise is recommended since these scripts DO NOT monitor for API call limitations with the persomal key. 
+- There is a sample environment variables file called .env_sample under the root folder of this project
+- You will clone this file and create one called .env where you actually input all of your secrets (API Keys + Access Key Pairs)
+* Parameters - explainations of what you see in .env_sample
+- CSE_API_KEY - Sumo Logic Cloud SIEM Enterprise API Key
+- CSE_TENANT_NAME - Sumo Logic Cloud SIEM Enterprise Tenant Name (https://{YOUR_TENANT_NAME}.jask.portal.ai)
+- CIP_ACCESS_ID - Sumo Logic Continuous Intelligence Platform Access ID
+- CIP_ACCESS_KEY - Sumo Logic Continuous Intelligence Platform Access Key
+- VT_API_KEY - VirusTotal API Key. Enterprise is recommended since these scripts DO NOT monitor for API call limitations with the persomal key. 
 * Requirements (Global)
 - Python 3.8+
 - pipenv - https://pypi.org/project/pipenv/

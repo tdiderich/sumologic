@@ -6,6 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+requests = "*"
+csv = "*"
+logging = "*"
+datetime = "*"
+json = "*"
 
 [requires]
 python_version = "3.8"
