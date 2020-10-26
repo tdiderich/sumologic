@@ -17,8 +17,11 @@
 5. VT_API_KEY - VirusTotal API Key. Enterprise is recommended since these scripts DO NOT monitor for API call limitations with the persomal key. 
 
 ## Getting Started
-1. Clone sample_config.py to config.py under the same directory
-2. Update all of the secrets needed based on the script you'd like to run
+1. Clone .env_sample to .env under the same directory
+```
+cp .env_sample .env
+```
+2. Update all of the secrets needed based on the script you'd like to run (NOTE: you need to rerun pipenv shell anytime you update these values to reload them)
 ```
 # SUMO CONFIG PARAMETERS 
 cse_api_key = 'ADD_ME'
@@ -41,12 +44,7 @@ pipenv install
 ```
 pipenv shell
 ```
-6. Create your environment variables file
-```
-cp .env_sample .env
-```
-7. Update your environment variables
-8. Run scripts
+6. Run scripts
 ```
 python3 foo/bar.py
 ```
