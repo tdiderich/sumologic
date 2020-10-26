@@ -62,16 +62,7 @@ python3 foo/bar.py
 10. [Network Blocks](#network-blocks)
 
 ### Metrics
-1. Funnel Metrics
-- This script gives you funnel metrics for your data flow (Records, Signals, and Insights)
-- Your output will look something like this
-```
-Getting funnel metrics for: content
-Date Range: 2020-09-01T00-2020-09-30T00
-Record count: 1655022
-Signal count: 83531
-Insight count: 7
-```
+1. Funnel Metrics - his script gives you funnel metrics for your data flow (Records, Signals, and Insights)
 
 ### Entities
 
@@ -86,8 +77,7 @@ Insight count: 7
 ### Rules
 
 ### Threat Intelligence
-1. Import From CSV
-- This is a simple script that imports IOCs from a CSV file. It uploads the data in batches of 25 and will take a couple seconds per upload. 
+1. Import From CSV - imports IOCs from a CSV file
 
 ### Match Lists
 
