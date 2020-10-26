@@ -17,20 +17,20 @@
 
 ### Metrics
 
-### Entities {#entities}
+### Entities
 
-### Signals {#signals}
+### Signals
 
-### Insights {#insights}
+### Insights
 
-### CIP Script Sources {#cip-script-sources}
+### CIP Script Sources
 
-### CSE and CIP Sync {#cse-and-and-cip-sync}
+### CSE and CIP Sync
 
-### Rules {#rules}
+### Rules
 
-### Threat Intelligence {#threat-intelligence}
+### Threat Intelligence
 
-### Match Lists {#match-lists}
+### Match Lists
 
-### Network Blocks {#network-blocks}
+### Network Blocks
