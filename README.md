@@ -62,7 +62,7 @@ python3 foo/bar.py
 10. [Network Blocks](#network-blocks)
 
 ### Metrics
-1. Funnel Metrics - his script gives you funnel metrics for your data flow (Records, Signals, and Insights)
+1. SOC Funnel Metrics
 
 ### Entities
 
@@ -71,14 +71,19 @@ python3 foo/bar.py
 ### Insights
 
 ### CIP Script Sources
+1. CSE Audit Log
+2. CSE Rules
+3. CSE Custom Insights
 
 ### CSE and CIP Sync
 
 ### Rules
 
 ### Threat Intelligence
-1. Import From CSV - imports IOCs from a CSV file
+1. Import from CSV
 
 ### Match Lists
 
 ### Network Blocks
+1. Import from CSV
+2. List and Search Netblocks
