@@ -15,7 +15,7 @@ hasNextPage = True
 offset = 0
 
 while hasNextPage:
-    cse_signals= f'https://{cse_tenant_name}.portal.jask.ai/api/v1/signals?offset={offset}&limit=100&q=suppressed%3A"false"%20timestamp%3ANOW-7D..NOW'
+    cse_signals= f'https://{cse_tenant_name}.portal.jask.ai/api/v1/signals?offset={offset}&limit=100&q=suppressed%3A"false"%20timestamp%3ANOW-1D..NOW'
     r = requests.get(cse_signals, headers=headers)
     signals = r.json()['data']['objects']
     for signal in signals:
