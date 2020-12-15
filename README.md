@@ -17,11 +17,15 @@
 5. VT_API_KEY - VirusTotal API Key. Enterprise is recommended since these scripts DO NOT monitor for API call limitations with the persomal key. 
 
 ## Getting Started
-1. Clone .env_sample to .env under the same directory
+1. Clone this repository
+```
+git clone https://github.com/tdiderich/sumologic.git
+```
+2. Clone .env_sample to .env under the same directory
 ```
 cp .env_sample .env
 ```
-2. Update all of the secrets needed based on the script you'd like to run (NOTE: you need to rerun pipenv shell anytime you update these values to reload them)
+3. Update all of the secrets needed based on the script you'd like to run (NOTE: you need to rerun pipenv shell anytime you update these values to reload them)
 ```
 # SUMO CONFIG PARAMETERS 
 cse_api_key = 'ADD_ME'
@@ -32,19 +36,19 @@ cip_access_key = 'ADD_ME'
 # THIRD PARTY CONFIG PARAMETERS
 vt_api_key = 'ADD_ME'
 ```
-3. Create pip environment
+4. Create pip environment
 ```
 pipenv --three
 ```
-4. Install dependancies
+5. Install dependancies
 ```
 pipenv install
 ```
-5. Enter pipenv
+6. Enter pipenv
 ```
 pipenv shell
 ```
-6. Run scripts
+7. Run scripts
 ```
 python3 foo/bar.py
 ```
