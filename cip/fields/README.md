@@ -4,6 +4,7 @@
 # Required environment variables
 1. CSE_API_KEY
 2. CSE_TENANT_NAME
+3. CIP_DEPLOYMENT
 
 # Details 
 * This script can be used to help you find unused Custom Fields in CIP, it works like this...

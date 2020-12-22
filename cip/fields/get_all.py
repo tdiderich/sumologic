@@ -9,10 +9,11 @@ from requests.auth import HTTPBasicAuth
 # environment variables
 cip_access_id = os.environ['CIP_ACCESS_ID']
 cip_access_key = os.environ['CIP_ACCESS_KEY']
+cip_deployment = os.environ['CIP_DEPLOYMENT']
 
 # other variables
-fields_url = 'https://api.us2.sumologic.com/api/v1/fields'
-fer_url = 'https://api.us2.sumologic.com/api/v1/extractionRules'
+fields_url = f'https://api.{cip_deployment}.sumologic.com/api/v1/fields'
+fer_url = f'https://api.{cip_deployment}.sumologic.com/api/v1/extractionRules'
 tracker = dict()
 used_fields = dict()
 unused_fields = dict()
