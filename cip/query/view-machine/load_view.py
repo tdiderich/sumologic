@@ -31,7 +31,17 @@ def start(days_back):
         'byReceiptTime': False
         }
     search = requests.post(query_url,auth=(cip_access_id, cip_access_key), json=search)
-    search_ids[search.json()['id']] = 'STARTED'
+    if search is not None and search.status_code < 300:
+        search_ids[search.json()['id']] = 'STARTED'
+    elif search.status_code == 429:
+        # max concurrent searches is 200
+        # so, this is sketchy rate limit handling
+        # it assumes at least 1 search will clear from the queue in the 60 seconds given
+        time.sleep(60)
+        search = requests.post(query_url,auth=(cip_access_id, cip_access_key), json=search)
+    else:
+        print(search.status_code)
+        print('There was an error while creating a search job.')    
     return search_ids
 
 def check(search_ids):
