@@ -1,2 +1,5 @@
 .env
 *.log
+cip/fields/results_all_fields.json
+cip/fields/results_unused_fields.json
+cip/fields/results_used_fields.json
