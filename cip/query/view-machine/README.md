@@ -18,3 +18,6 @@ _sourceCategory-"foo"
 | count
 | save view foo_view
 ```
+
+# Limitations
+1. There is essentially no error handling in this script, so beware of rate limiting and other issues 
