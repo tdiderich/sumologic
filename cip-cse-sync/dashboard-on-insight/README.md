@@ -1,5 +1,5 @@
 # TL;DR
-- This script blah blah blah
+- This script creates a dashboard in CIP when an Insight is created
 
 # Required environment variables
 1. CSE_API_KEY
