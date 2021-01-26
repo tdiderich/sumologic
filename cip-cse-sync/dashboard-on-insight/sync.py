@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import requests
 import os
+import json
 from templates import awesome_user_dash
 
 # environment variables
@@ -19,7 +20,7 @@ hasNextPage = True
 offset = 0
 
 while hasNextPage:
-    cse_signals= f'https://{cse_tenant_name}.portal.jask.ai/api/v1/insights?offset={offset}&limit=1&q=-status%3A%22closed%22%20entity.type%3A%22username%22'
+    cse_signals= f'https://{cse_tenant_name}.portal.jask.ai/api/v1/insights?offset={offset}&limit=10&q=-status%3A%22closed%22%20entity.type%3A%22username%22'
     r = requests.get(cse_signals, headers=headers)
     insights = r.json()['data']['objects']
     for i in insights:
@@ -36,7 +37,6 @@ while hasNextPage:
             create_folder = requests.post(f'https://api.{cip_deployment}.sumologic.com/api/v2/content/folders', auth=(cip_access_id, cip_access_key), json=folder)
             dashboard_folder_id = create_folder.json()['id']
             dashboard = awesome_user_dash(user_username, insight_id, dashboard_folder_id)
-            print(dashboard)
             if create_folder.status_code == 200:
                 pass
             else:
@@ -44,14 +44,14 @@ while hasNextPage:
                 print(create_folder.text)
             create_dashboard = requests.post(f'https://api.{cip_deployment}.sumologic.com/api/v2/dashboards', auth=(cip_access_id, cip_access_key), json=dashboard)
             if create_dashboard.status_code == 200:
-                print('success')
+                print(f'successfully created investigation for {insight_id} on user {user_username}')
                 pass
             else:
                 print('errrrrr on dashboard creation')
                 print(create_dashboard.text)
 
     if r.json()['data']['hasNextPage'] != True:
-        hasNextPage = False
+        pass
     else:
         hasNextPage = False
         offset += 10                    
