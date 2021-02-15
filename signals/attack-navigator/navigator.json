@@ -1,0 +1,2254 @@
+{
+    "description": "Maps Sumo Logic rules to the Mitre Att&ck framework.",
+    "domain": "enterprise-attack",
+    "filters": {
+        "platforms": [
+            "Linux",
+            "macOS",
+            "Windows",
+            "Office 365",
+            "Azure AD",
+            "AWS",
+            "GCP",
+            "Azure",
+            "SaaS",
+            "PRE",
+            "Network"
+        ]
+    },
+    "gradient": {
+        "colors": [
+            "#fff2af",
+            "#c0d373",
+            "#6cb211"
+        ],
+        "maxValue": 5,
+        "minValue": 1
+    },
+    "hideDisabled": false,
+    "layout": {
+        "layout": "side",
+        "showID": false,
+        "showName": true
+    },
+    "legendItems": [],
+    "metadata": [
+        {
+            "name": "version",
+            "value": "1.251.0"
+        }
+    ],
+    "name": "Sumo Logic v1.251.0",
+    "selectSubtechniquesWithParent": false,
+    "selectTechniquesAcrossTactics": true,
+    "showTacticRowBackground": true,
+    "sorting": 0,
+    "tacticRowBackground": "#dddddd",
+    "techniques": [
+        {
+            "color": "",
+            "comment": "MATCH-S00333",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1560"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1123"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00263",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1119"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00269",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1115"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1074"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00125\nMATCH-S00130",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1530"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1602"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00060\nMATCH-S00071\nMATCH-S00125\nMATCH-S00130",
+            "enabled": true,
+            "metadata": [],
+            "score": 4,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1213"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00263",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1005"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1039"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00293\nMATCH-S00304\nMATCH-S00304\nMATCH-S00313",
+            "enabled": true,
+            "metadata": [],
+            "score": 4,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1025"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1114"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1056"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1185"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00501",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1557"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00439",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1113"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "collection",
+            "techniqueID": "T1125"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00005\nLEGACY-S00009\nLEGACY-S00035\nLEGACY-S00041\nLEGACY-S00042\nLEGACY-S00043\nLEGACY-S00045\nLEGACY-S00048\nLEGACY-S00051\nLEGACY-S00052\nLEGACY-S00053\nLEGACY-S00056\nLEGACY-S00072\nLEGACY-S00181\nLEGACY-S00190\nLEGACY-S00191\nLEGACY-S00196\nMATCH-S00034\nMATCH-S00459\nMATCH-S00474\nMATCH-S00484\nMATCH-S00485\nMATCH-S00486\nMATCH-S00487\nMATCH-S00488\nMATCH-S00489\nMATCH-S00490\nMATCH-S00491\nMATCH-S00492\nMATCH-S00493\nMATCH-S00494\nMATCH-S00495\nMATCH-S00496\nMATCH-S00497\nTHRESHOLD-S00013",
+            "enabled": true,
+            "metadata": [],
+            "score": 35,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1071"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00172",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1043"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00293\nMATCH-S00304\nMATCH-S00313",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1092"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00002\nLEGACY-S00003\nLEGACY-S00027\nLEGACY-S00182\nMATCH-S00136",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1132"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00003",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1001"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00008\nLEGACY-S00013\nLEGACY-S00026\nLEGACY-S00030\nLEGACY-S00042\nLEGACY-S00180\nLEGACY-S00194\nTHRESHOLD-S00013\nTHRESHOLD-S00027\nTHRESHOLD-S00036\nTHRESHOLD-S00044",
+            "enabled": true,
+            "metadata": [],
+            "score": 11,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1568"
+        },
+        {
+            "color": "",
+            "comment": "THRESHOLD-S00028\nTHRESHOLD-S00040",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1573"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1008"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00324\nMATCH-S00348\nMATCH-S00398\nMATCH-S00400\nMATCH-S00410\nMATCH-S00412\nMATCH-S00466",
+            "enabled": true,
+            "metadata": [],
+            "score": 7,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1105"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1104"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1026"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00396",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1095"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00350",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1571"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1572"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00202\nTHRESHOLD-S00028",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1090"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00502",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1219"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1205"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00001\nLEGACY-S00058\nMATCH-S00035\nTHRESHOLD-S00015\nTHRESHOLD-S00016",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "command-and-control",
+            "techniqueID": "T1102"
+        },
+        {
+            "color": "",
+            "comment": "CHAIN-S00003\nCHAIN-S00003\nCHAIN-S00005\nCHAIN-S00005\nLEGACY-S00029\nLEGACY-S00034\nLEGACY-S00068\nLEGACY-S00081\nLEGACY-S00082\nLEGACY-S00168\nTHRESHOLD-S00002\nTHRESHOLD-S00010\nTHRESHOLD-S00011\nTHRESHOLD-S00012\nTHRESHOLD-S00019\nTHRESHOLD-S00020\nTHRESHOLD-S00023\nTHRESHOLD-S00025\nTHRESHOLD-S00026\nTHRESHOLD-S00031\nTHRESHOLD-S00032\nTHRESHOLD-S00034\nTHRESHOLD-S00035\nTHRESHOLD-S00037\nTHRESHOLD-S00038\nTHRESHOLD-S00053\nTHRESHOLD-S00054\nTHRESHOLD-S00057\nTHRESHOLD-S00071\nTHRESHOLD-S00072",
+            "enabled": true,
+            "metadata": [],
+            "score": 30,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1110"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00298\nMATCH-S00391\nMATCH-S00397\nMATCH-S00404\nMATCH-S00405",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1555"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00364",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1212"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1187"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1056"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00501",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1557"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1556"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00162\nMATCH-S00172\nMATCH-S00179",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1040"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00161\nMATCH-S00190\nMATCH-S00191\nMATCH-S00198\nMATCH-S00265\nMATCH-S00267\nMATCH-S00273\nMATCH-S00287\nMATCH-S00290\nMATCH-S00298\nMATCH-S00321\nMATCH-S00327\nMATCH-S00333\nMATCH-S00339\nMATCH-S00344\nMATCH-S00406\nMATCH-S00414\nMATCH-S00427\nMATCH-S00429\nMATCH-S00431\nMATCH-S00458\nMATCH-S00468\nMATCH-S00479",
+            "enabled": true,
+            "metadata": [],
+            "score": 23,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1003"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00263",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1528"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1539"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00327\nMATCH-S00498\nTHRESHOLD-S00047\nTHRESHOLD-S00075",
+            "enabled": true,
+            "metadata": [],
+            "score": 4,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1558"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1111"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00263\nMATCH-S00321",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "credential-access",
+            "techniqueID": "T1552"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00002\nLEGACY-S00182",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1548"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00190\nMATCH-S00267\nMATCH-S00354",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1134"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00004",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1197"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00136\nMATCH-S00352\nMATCH-S00358",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1140"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1006"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1480"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1211"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00315\nMATCH-S00318\nMATCH-S00392\nMATCH-S00417",
+            "enabled": true,
+            "metadata": [],
+            "score": 4,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1222"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1564"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00381",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1574"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00387\nMATCH-S00390",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1562"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00170\nMATCH-S00287\nMATCH-S00295\nMATCH-S00415\nMATCH-S00473",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1070"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00394\nMATCH-S00461",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1202"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1149"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00033\nLEGACY-S00044\nLEGACY-S00171\nMATCH-S00139\nMATCH-S00152\nMATCH-S00157\nMATCH-S00324\nMATCH-S00408\nMATCH-S00419\nMATCH-S00422\nMATCH-S00475\nMATCH-S00476\nMATCH-S00482",
+            "enabled": true,
+            "metadata": [],
+            "score": 13,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1036"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1556"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00206\nLEGACY-S00207\nMATCH-S00099\nMATCH-S00101\nMATCH-S00103\nMATCH-S00106\nMATCH-S00113\nMATCH-S00140\nMATCH-S00142\nMATCH-S00144",
+            "enabled": true,
+            "metadata": [],
+            "score": 10,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1578"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00135",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1112"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1601"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1599"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00046",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1027"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1542"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00214\nMATCH-S00278\nMATCH-S00330\nMATCH-S00336\nMATCH-S00463",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1055"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1108"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00271",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1207"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1014"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00378",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1064"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00276\nMATCH-S00285\nMATCH-S00287\nMATCH-S00310\nMATCH-S00330\nMATCH-S00341\nMATCH-S00372\nMATCH-S00464",
+            "enabled": true,
+            "metadata": [],
+            "score": 8,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1218"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1216"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00084\nLEGACY-S00085\nLEGACY-S00086\nLEGACY-S00091\nLEGACY-S00094\nMATCH-S00510",
+            "enabled": true,
+            "metadata": [],
+            "score": 6,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1553"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1221"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1205"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1127"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1535"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00196\nMATCH-S00200\nMATCH-S00227\nMATCH-S00301\nMATCH-S00303\nMATCH-S00306\nMATCH-S00307\nMATCH-S00327",
+            "enabled": true,
+            "metadata": [],
+            "score": 8,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1550"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00029\nLEGACY-S00067\nLEGACY-S00080\nLEGACY-S00105\nLEGACY-S00168\nMATCH-S000237\nMATCH-S00094\nMATCH-S00095\nMATCH-S00096\nMATCH-S00115\nMATCH-S00118\nMATCH-S00120\nMATCH-S00128\nMATCH-S00129\nMATCH-S00133\nMATCH-S00138\nMATCH-S00176\nMATCH-S00220\nMATCH-S00224\nMATCH-S00226\nMATCH-S00243\nMATCH-S00245\nMATCH-S00250\nMATCH-S00433\nMATCH-S00455\nMATCH-S00504\nMATCH-S00505\nMATCH-S00509\nTHRESHOLD-S00002\nTHRESHOLD-S00022\nTHRESHOLD-S00026\nTHRESHOLD-S00035\nTHRESHOLD-S00042\nTHRESHOLD-S00043\nTHRESHOLD-S00055\nTHRESHOLD-S00065\nTHRESHOLD-S00073\nTHRESHOLD-S00077",
+            "enabled": true,
+            "metadata": [],
+            "score": 38,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1078"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1497"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1600"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00435",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1220"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "defense-evasion",
+            "techniqueID": "T1484"
+        },
+        {
+            "color": "",
+            "comment": "AGGREGATION-S00001\nAGGREGATION-S00002\nLEGACY-S00023\nMATCH-S00210\nMATCH-S00213\nMATCH-S00252\nMATCH-S00308\nTHRESHOLD-S00018\nTHRESHOLD-S00062",
+            "enabled": true,
+            "metadata": [],
+            "score": 9,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1087"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1010"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1217"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1580"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1538"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00210\nMATCH-S00213",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1526"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00181\nTHRESHOLD-S00062\nTHRESHOLD-S00076",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1482"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00002\nLEGACY-S00028\nLEGACY-S00182\nMATCH-S00315\nMATCH-S00318\nTHRESHOLD-S00009",
+            "enabled": true,
+            "metadata": [],
+            "score": 6,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1083"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00049\nLEGACY-S00050\nLEGACY-S00059\nLEGACY-S00060\nTHRESHOLD-S00003\nTHRESHOLD-S00004\nTHRESHOLD-S00074",
+            "enabled": true,
+            "metadata": [],
+            "score": 7,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1046"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00192\nTHRESHOLD-S00033\nTHRESHOLD-S00059\nTHRESHOLD-S00060\nTHRESHOLD-S00061",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1135"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00162\nMATCH-S00172\nMATCH-S00179",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1040"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1201"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1120"
+        },
+        {
+            "color": "",
+            "comment": "AGGREGATION-S00001\nAGGREGATION-S00002\nMATCH-S00159\nMATCH-S00210\nMATCH-S00213\nMATCH-S00254",
+            "enabled": true,
+            "metadata": [],
+            "score": 6,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1069"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00281",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1057"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00177",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1012"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00167\nMATCH-S00185\nMATCH-S00465",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1018"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1518"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00174",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1082"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00162\nMATCH-S00192",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1016"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1049"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00168",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1033"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1007"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00194",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1124"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "discovery",
+            "techniqueID": "T1497"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00002\nLEGACY-S00093\nLEGACY-S00182\nMATCH-S00136\nMATCH-S00149\nMATCH-S00153\nMATCH-S00156\nMATCH-S00161\nMATCH-S00190\nMATCH-S00191\nMATCH-S00198\nMATCH-S00324\nMATCH-S00378\nMATCH-S00447\nMATCH-S00449\nMATCH-S00472\nMATCH-S00477\nMATCH-S00478\nMATCH-S00550",
+            "enabled": true,
+            "metadata": [],
+            "score": 19,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1059"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00366",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1175"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00010\nMATCH-S00263",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1203"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1061"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00472",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1559"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1106"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00153\nMATCH-S00170\nMATCH-S00171\nMATCH-S00214\nMATCH-S00471",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1053"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00378",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1064"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1129"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00451",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1072"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1153"
+        },
+        {
+            "color": "",
+            "comment": "CHAIN-S00001\nLEGACY-S00171\nMATCH-S00375",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1569"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00039\nLEGACY-S00062\nLEGACY-S00063\nLEGACY-S00165\nMATCH-S00137\nMATCH-S00187\nMATCH-S00369",
+            "enabled": true,
+            "metadata": [],
+            "score": 7,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1204"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00146\nMATCH-S00147\nMATCH-S00150\nMATCH-S00151\nMATCH-S00366\nMATCH-S00471\nMATCH-S00483",
+            "enabled": true,
+            "metadata": [],
+            "score": 7,
+            "showSubtechniques": false,
+            "tactic": "execution",
+            "techniqueID": "T1047"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00356",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "exfiltration",
+            "techniqueID": "T1020"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "exfiltration",
+            "techniqueID": "T1030"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00061\nLEGACY-S00193",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "exfiltration",
+            "techniqueID": "T1048"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00360",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "exfiltration",
+            "techniqueID": "T1041"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "exfiltration",
+            "techniqueID": "T1011"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00293\nMATCH-S00304\nMATCH-S00313",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "exfiltration",
+            "techniqueID": "T1052"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00362\nMATCH-S00457\nMATCH-S00458\nMATCH-S00459",
+            "enabled": true,
+            "metadata": [],
+            "score": 4,
+            "showSubtechniques": false,
+            "tactic": "exfiltration",
+            "techniqueID": "T1567"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00459",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "exfiltration",
+            "techniqueID": "T1029"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "exfiltration",
+            "techniqueID": "T1537"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00168\nTHRESHOLD-S00064",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1531"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00437",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1485"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00315\nMATCH-S00318\nMATCH-S00445",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1486"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1565"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1491"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1561"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1499"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1495"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00283\nMATCH-S00283\nMATCH-S00295\nMATCH-S00315\nMATCH-S00318",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1490"
+        },
+        {
+            "color": "",
+            "comment": "THRESHOLD-S00078",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1498"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00189\nLEGACY-S00192",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1496"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00097\nLEGACY-S00100\nLEGACY-S00101",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1489"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "impact",
+            "techniqueID": "T1529"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "initial-access",
+            "techniqueID": "T1189"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00064\nLEGACY-S00077\nLEGACY-S00078\nLEGACY-S00079\nLEGACY-S00095\nLEGACY-S00096\nLEGACY-S00098\nMATCH-S00022\nMATCH-S00023\nMATCH-S00032\nMATCH-S00033\nMATCH-S00036\nMATCH-S00047\nMATCH-S00049\nMATCH-S00050\nMATCH-S00375\nTHRESHOLD-S00005\nTHRESHOLD-S00006\nTHRESHOLD-S00007\nTHRESHOLD-S00008",
+            "enabled": true,
+            "metadata": [],
+            "score": 20,
+            "showSubtechniques": false,
+            "tactic": "initial-access",
+            "techniqueID": "T1190"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00179\nLEGACY-S00199",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "initial-access",
+            "techniqueID": "T1133"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "initial-access",
+            "techniqueID": "T1200"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00006\nLEGACY-S00007\nLEGACY-S00106\nLEGACY-S00183\nLEGACY-S00185\nLEGACY-S00187\nLEGACY-S00200\nMATCH-S00063\nMATCH-S00078\nMATCH-S00079\nMATCH-S00080\nMATCH-S00081\nMATCH-S00082\nMATCH-S00083\nMATCH-S00084\nMATCH-S00085\nMATCH-S00086\nMATCH-S00087\nMATCH-S00116\nMATCH-S00126\nMATCH-S00137\nMATCH-S00499\nMATCH-S00500",
+            "enabled": true,
+            "metadata": [],
+            "score": 23,
+            "showSubtechniques": false,
+            "tactic": "initial-access",
+            "techniqueID": "T1566"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "initial-access",
+            "techniqueID": "T1091"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00470\nMATCH-S00480\nMATCH-S00481",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "initial-access",
+            "techniqueID": "T1195"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00256\nMATCH-S00260",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "initial-access",
+            "techniqueID": "T1199"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00029\nLEGACY-S00067\nLEGACY-S00080\nLEGACY-S00105\nLEGACY-S00168\nMATCH-S000237\nMATCH-S00094\nMATCH-S00095\nMATCH-S00096\nMATCH-S00115\nMATCH-S00118\nMATCH-S00120\nMATCH-S00128\nMATCH-S00129\nMATCH-S00133\nMATCH-S00138\nMATCH-S00176\nMATCH-S00220\nMATCH-S00224\nMATCH-S00226\nMATCH-S00243\nMATCH-S00245\nMATCH-S00250\nMATCH-S00433\nMATCH-S00455\nMATCH-S00504\nMATCH-S00505\nMATCH-S00509\nTHRESHOLD-S00002\nTHRESHOLD-S00022\nTHRESHOLD-S00026\nTHRESHOLD-S00035\nTHRESHOLD-S00042\nTHRESHOLD-S00043\nTHRESHOLD-S00055\nTHRESHOLD-S00065\nTHRESHOLD-S00073\nTHRESHOLD-S00077",
+            "enabled": true,
+            "metadata": [],
+            "score": 38,
+            "showSubtechniques": false,
+            "tactic": "initial-access",
+            "techniqueID": "T1078"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00366",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1175"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00031\nLEGACY-S00054\nMATCH-S00315\nMATCH-S00453",
+            "enabled": true,
+            "metadata": [],
+            "score": 4,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1210"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1534"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1570"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1563"
+        },
+        {
+            "color": "",
+            "comment": "CHAIN-S00001\nCHAIN-S00004\nLEGACY-S00023\nLEGACY-S00024\nLEGACY-S00025\nLEGACY-S00036\nLEGACY-S00047\nLEGACY-S00057\nLEGACY-S00065\nLEGACY-S00066\nLEGACY-S00069\nLEGACY-S00070\nLEGACY-S00071\nLEGACY-S00073\nLEGACY-S00074\nLEGACY-S00075\nLEGACY-S00076\nLEGACY-S00083\nLEGACY-S00105\nLEGACY-S00167\nLEGACY-S00198\nMATCH-S00146\nMATCH-S00366\nMATCH-S00425\nMATCH-S00441\nMATCH-S00443\nMATCH-S00472\nMATCH-S00482\nTHRESHOLD-S00065",
+            "enabled": true,
+            "metadata": [],
+            "score": 29,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1021"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1091"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1051"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00451",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1072"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1080"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00196\nMATCH-S00200\nMATCH-S00227\nMATCH-S00301\nMATCH-S00303\nMATCH-S00306\nMATCH-S00307\nMATCH-S00327",
+            "enabled": true,
+            "metadata": [],
+            "score": 8,
+            "showSubtechniques": false,
+            "tactic": "lateral-movement",
+            "techniqueID": "T1550"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00169\nMATCH-S00068\nMATCH-S00069\nMATCH-S00107\nMATCH-S00109\nMATCH-S00152\nMATCH-S00202\nMATCH-S00208\nMATCH-S00220\nMATCH-S00226\nMATCH-S00229\nMATCH-S00231\nMATCH-S00233\nTHRESHOLD-S00026\nTHRESHOLD-S00051\nTHRESHOLD-S00052\nTHRESHOLD-S00064\nTHRESHOLD-S00067",
+            "enabled": true,
+            "metadata": [],
+            "score": 18,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1098"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00004",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1197"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00135\nMATCH-S00345\nMATCH-S00469",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1547"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1037"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1176"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1554"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00111\nMATCH-S00134\nMATCH-S00158\nMATCH-S00235\nTHRESHOLD-S00064",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1136"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00482\nMATCH-S00506",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1543"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00509",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1546"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00179\nLEGACY-S00199",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1133"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00381",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1574"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1062"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1525"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00169",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1137"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1034"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1542"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1108"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00153\nMATCH-S00170\nMATCH-S00171\nMATCH-S00214\nMATCH-S00471",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1053"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00164\nMATCH-S00174",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1505"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1205"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00029\nLEGACY-S00067\nLEGACY-S00080\nLEGACY-S00105\nLEGACY-S00168\nMATCH-S000237\nMATCH-S00094\nMATCH-S00095\nMATCH-S00096\nMATCH-S00115\nMATCH-S00118\nMATCH-S00120\nMATCH-S00128\nMATCH-S00129\nMATCH-S00133\nMATCH-S00138\nMATCH-S00176\nMATCH-S00220\nMATCH-S00224\nMATCH-S00226\nMATCH-S00243\nMATCH-S00245\nMATCH-S00250\nMATCH-S00433\nMATCH-S00455\nMATCH-S00504\nMATCH-S00505\nMATCH-S00509\nTHRESHOLD-S00002\nTHRESHOLD-S00022\nTHRESHOLD-S00026\nTHRESHOLD-S00035\nTHRESHOLD-S00042\nTHRESHOLD-S00043\nTHRESHOLD-S00055\nTHRESHOLD-S00065\nTHRESHOLD-S00073\nTHRESHOLD-S00077",
+            "enabled": true,
+            "metadata": [],
+            "score": 38,
+            "showSubtechniques": false,
+            "tactic": "persistence",
+            "techniqueID": "T1078"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00002\nLEGACY-S00182",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1548"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00190\nMATCH-S00267\nMATCH-S00354",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1134"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00135\nMATCH-S00345\nMATCH-S00469",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1547"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1037"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00482\nMATCH-S00506",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1543"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00509",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1546"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00462\nMATCH-S00507",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1068"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00381",
+            "enabled": true,
+            "metadata": [],
+            "score": 1,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1574"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1034"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00214\nMATCH-S00278\nMATCH-S00330\nMATCH-S00336\nMATCH-S00463",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1055"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00153\nMATCH-S00170\nMATCH-S00171\nMATCH-S00214\nMATCH-S00471",
+            "enabled": true,
+            "metadata": [],
+            "score": 5,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1053"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00029\nLEGACY-S00067\nLEGACY-S00080\nLEGACY-S00105\nLEGACY-S00168\nMATCH-S000237\nMATCH-S00094\nMATCH-S00095\nMATCH-S00096\nMATCH-S00115\nMATCH-S00118\nMATCH-S00120\nMATCH-S00128\nMATCH-S00129\nMATCH-S00133\nMATCH-S00138\nMATCH-S00176\nMATCH-S00220\nMATCH-S00224\nMATCH-S00226\nMATCH-S00243\nMATCH-S00245\nMATCH-S00250\nMATCH-S00433\nMATCH-S00455\nMATCH-S00504\nMATCH-S00505\nMATCH-S00509\nTHRESHOLD-S00002\nTHRESHOLD-S00022\nTHRESHOLD-S00026\nTHRESHOLD-S00035\nTHRESHOLD-S00042\nTHRESHOLD-S00043\nTHRESHOLD-S00055\nTHRESHOLD-S00065\nTHRESHOLD-S00073\nTHRESHOLD-S00077",
+            "enabled": true,
+            "metadata": [],
+            "score": 38,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1078"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "privilege-escalation",
+            "techniqueID": "T1484"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00049\nLEGACY-S00050\nLEGACY-S00059\nLEGACY-S00060\nMATCH-S00036\nMATCH-S00047\nMATCH-S00049\nMATCH-S00050\nTHRESHOLD-S00003\nTHRESHOLD-S00004\nTHRESHOLD-S00005\nTHRESHOLD-S00006\nTHRESHOLD-S00007\nTHRESHOLD-S00008\nTHRESHOLD-S00015\nTHRESHOLD-S00016\nTHRESHOLD-S00033",
+            "enabled": true,
+            "metadata": [],
+            "score": 17,
+            "showSubtechniques": false,
+            "tactic": "reconnaissance",
+            "techniqueID": "T1595"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "reconnaissance",
+            "techniqueID": "T1592"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "reconnaissance",
+            "techniqueID": "T1589"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "reconnaissance",
+            "techniqueID": "T1590"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "reconnaissance",
+            "techniqueID": "T1591"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00006\nLEGACY-S00007\nLEGACY-S00106\nLEGACY-S00183\nLEGACY-S00185\nLEGACY-S00187\nLEGACY-S00200\nMATCH-S00063\nMATCH-S00078\nMATCH-S00079\nMATCH-S00080\nMATCH-S00081\nMATCH-S00082\nMATCH-S00083\nMATCH-S00084\nMATCH-S00085\nMATCH-S00086\nMATCH-S00087\nMATCH-S00116\nMATCH-S00126\nMATCH-S00137",
+            "enabled": true,
+            "metadata": [],
+            "score": 21,
+            "showSubtechniques": false,
+            "tactic": "reconnaissance",
+            "techniqueID": "T1598"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "reconnaissance",
+            "techniqueID": "T1597"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "reconnaissance",
+            "techniqueID": "T1596"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "reconnaissance",
+            "techniqueID": "T1593"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "reconnaissance",
+            "techniqueID": "T1594"
+        },
+        {
+            "color": "",
+            "comment": "MATCH-S00062\nMATCH-S00063\nMATCH-S00065",
+            "enabled": true,
+            "metadata": [],
+            "score": 3,
+            "showSubtechniques": false,
+            "tactic": "resource-development",
+            "techniqueID": "T1583"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00080\nMATCH-S00094\nMATCH-S00095\nMATCH-S00096\nMATCH-S00128\nMATCH-S00250\nTHRESHOLD-S00022\nTHRESHOLD-S00026\nTHRESHOLD-S00042\nTHRESHOLD-S00043\nTHRESHOLD-S00055\nTHRESHOLD-S00073",
+            "enabled": true,
+            "metadata": [],
+            "score": 12,
+            "showSubtechniques": false,
+            "tactic": "resource-development",
+            "techniqueID": "T1586"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "resource-development",
+            "techniqueID": "T1584"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "resource-development",
+            "techniqueID": "T1587"
+        },
+        {
+            "color": "",
+            "comment": null,
+            "enabled": false,
+            "metadata": [],
+            "score": null,
+            "showSubtechniques": false,
+            "tactic": "resource-development",
+            "techniqueID": "T1585"
+        },
+        {
+            "color": "",
+            "comment": "LEGACY-S00064\nLEGACY-S00096",
+            "enabled": true,
+            "metadata": [],
+            "score": 2,
+            "showSubtechniques": false,
+            "tactic": "resource-development",
+            "techniqueID": "T1588"
+        }
+    ],
+    "versions": {
+        "attack": "8",
+        "layer": "4.0",
+        "navigator": "4.0"
+    }
+}
