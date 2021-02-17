@@ -1,0 +1,821 @@
+{
+    "type": "FolderSyncDefinition",
+    "name": "Insight Metrics",
+    "description": "",
+    "children": [
+        {
+            "type": "DashboardV2SyncDefinition",
+            "name": "Insights",
+            "description": "",
+            "title": "Insights",
+            "rootPanel": null,
+            "theme": "Dark",
+            "topologyLabelMap": {
+                "data": {}
+            },
+            "refreshInterval": 0,
+            "timeRange": {
+                "type": "BeginBoundedTimeRange",
+                "from": {
+                    "type": "RelativeTimeRangeBoundary",
+                    "relativeTime": "-15m"
+                },
+                "to": null
+            },
+            "layout": {
+                "layoutType": "Grid",
+                "layoutStructures": [
+                    {
+                        "key": "panelDF37382E88D0694C",
+                        "structure": "{\"height\":7,\"width\":24,\"x\":0,\"y\":20}"
+                    },
+                    {
+                        "key": "panel6BAFF8A6BA8DFA4F",
+                        "structure": "{\"height\":6,\"width\":8,\"x\":8,\"y\":8}"
+                    },
+                    {
+                        "key": "panelA258868193588844",
+                        "structure": "{\"height\":6,\"width\":8,\"x\":16,\"y\":9}"
+                    },
+                    {
+                        "key": "panel237EE73894F29948",
+                        "structure": "{\"height\":6,\"width\":8,\"x\":0,\"y\":8}"
+                    },
+                    {
+                        "key": "panel22BEEA8788F84B4D",
+                        "structure": "{\"height\":9,\"width\":24,\"x\":0,\"y\":38}"
+                    },
+                    {
+                        "key": "panelPANE-D83C9C4E9F1FE949",
+                        "structure": "{\"height\":6,\"width\":8,\"x\":0,\"y\":14}"
+                    },
+                    {
+                        "key": "panelE3B06DB29BD06A46",
+                        "structure": "{\"height\":8,\"width\":24,\"x\":0,\"y\":0}"
+                    },
+                    {
+                        "key": "panel9BAE2300B9D66A40",
+                        "structure": "{\"height\":6,\"width\":8,\"x\":8,\"y\":14}"
+                    },
+                    {
+                        "key": "panelAE0BC836ADD18A48",
+                        "structure": "{\"height\":6,\"width\":8,\"x\":16,\"y\":13}"
+                    }
+                ]
+            },
+            "panels": [
+                {
+                    "id": "885E40CBD917DF82",
+                    "key": "panelDF37382E88D0694C",
+                    "title": "Insight Resolution Statuses",
+                    "visualSettings": "{\"general\":{\"mode\":\"distribution\",\"type\":\"bar\"},\"color\":{\"family\":\"scheme1\"},\"series\":{},\"overrides\":[]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| toInt(\"{{lookback}}\") as lookback\n| toLong(realtimeslice) as log_time\n| where log_time > (now() - 86400000*lookback)\n| count by resolution",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "6509C1261C2D70BE",
+                    "key": "panel6BAFF8A6BA8DFA4F",
+                    "title": "Average Hours To Response",
+                    "visualSettings": "{\"general\":{\"mode\":\"singleValueMetrics\",\"type\":\"svp\"},\"svp\":{\"label\":\"\",\"thresholds\":[{\"from\":0,\"to\":3,\"color\":\"#16943E\"},{\"from\":3,\"to\":12,\"color\":\"#DFBE2E\"},{\"from\":12,\"to\":24,\"color\":\"#BF2121\"}],\"gauge\":{\"show\":true,\"max\":24},\"sparkline\":{\"show\":false},\"hideData\":false},\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toInt(\"{{lookback}}\") as lookback\n| toLong(realtimeslice) as log_time\n| where log_time > (now() - 86400000*lookback)\n| avg(avg_time_to_response)\n| round(_avg / 3600) as _avg",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "7D761F1959349218",
+                    "key": "panelA258868193588844",
+                    "title": "Average Hours to Remediation",
+                    "visualSettings": "{\"general\":{\"mode\":\"singleValueMetrics\",\"type\":\"svp\"},\"svp\":{\"label\":\"\",\"thresholds\":[{\"from\":0,\"to\":3,\"color\":\"#16943E\"},{\"from\":3,\"to\":12,\"color\":\"#DFBE2E\"},{\"from\":12,\"to\":24,\"color\":\"#BF2121\"}],\"gauge\":{\"show\":true,\"max\":24},\"sparkline\":{\"show\":false}},\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toInt(\"{{lookback}}\") as lookback\n| toLong(realtimeslice) as log_time\n| where log_time > (now() - 86400000*lookback)\n| avg(avg_time_to_remediation)\n| round(_avg / 3600) as _avg",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "DC2B125175D9302B",
+                    "key": "panel237EE73894F29948",
+                    "title": "Average Hours to Detection",
+                    "visualSettings": "{\"general\":{\"mode\":\"singleValueMetrics\",\"type\":\"svp\"},\"svp\":{\"label\":\"\",\"thresholds\":[{\"from\":0,\"to\":24,\"color\":\"#16943E\"},{\"from\":24,\"to\":96,\"color\":\"#DFBE2E\"},{\"from\":96,\"to\":168,\"color\":\"#BF2121\"}],\"gauge\":{\"show\":true,\"max\":168},\"sparkline\":{\"show\":false}},\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toInt(\"{{lookback}}\") as lookback\n| toLong(realtimeslice) as log_time\n| where log_time > (now() - 86400000*lookback)\n| avg(avg_time_to_detection)\n| round(_avg / 3600) as _avg",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "0089C356734B7109",
+                    "key": "panel22BEEA8788F84B4D",
+                    "title": "Insights Closed by User",
+                    "visualSettings": "{\"general\":{\"mode\":\"distribution\",\"type\":\"column\"},\"series\":{},\"overrides\":[]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toInt(\"{{lookback}}\") as lookback\n| toLong(realtimeslice) as log_time\n| where log_time > (now() - 86400000*lookback)\n| count by closed_by\n| order by _count",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "51BD3B0F3222E357",
+                    "key": "panelPANE-D83C9C4E9F1FE949",
+                    "title": "Average Hours to Detection",
+                    "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2},\"title\":{\"fontSize\":16},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[{\"series\":[\"_avg_high\"],\"queries\":[],\"properties\":{\"color\":\"#bf2121\",\"displayType\":\"smooth\",\"name\":\"High Severity\"}},{\"series\":[\"_avg_low\"],\"queries\":[],\"properties\":{\"color\":\"#116b25\",\"displayType\":\"smooth\",\"name\":\"Low Severity\"}},{\"series\":[\"_avg_med\"],\"queries\":[],\"properties\":{\"color\":\"#dfbe2e\",\"displayType\":\"smooth\",\"name\":\"Medium Severity\"}}]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _messageTime\n| timeslice 1d\n| toInt(\"{{lookback}}\") as lookback\n| where _messageTime > (now() - 86400000*lookback)\n| where severity = \"HIGH\"\n| avg(avg_time_to_response) by _timeslice\n| round(_avg / 60) as _avg_high\n| fields - _avg\n| order by _timeslice asc",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _messageTime\n| timeslice 1d\n| toInt(\"{{lookback}}\") as lookback\n| where _messageTime > (now() - 86400000*lookback)\n| where severity = \"MEDIUM\"\n| avg(avg_time_to_response) by _timeslice\n| round(_avg / 3600) as _avg_med\n| fields - _avg\n| order by _timeslice asc",
+                            "queryType": "Logs",
+                            "queryKey": "B",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _messageTime\n| timeslice 1d\n| toInt(\"{{lookback}}\") as lookback\n| where _messageTime > (now() - 86400000*lookback)\n| where severity = \"LOW\"\n| avg(avg_time_to_response) by _timeslice\n| round(_avg / 3600) as _avg_low\n| fields - _avg\n| order by _timeslice asc",
+                            "queryType": "Logs",
+                            "queryKey": "C",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "1257EC1E34319FCA",
+                    "key": "panelE3B06DB29BD06A46",
+                    "title": "Insights Closed by Day and Severity",
+                    "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\"},\"series\":{},\"overrides\":[{\"series\":[\"HIGH\"],\"queries\":[],\"properties\":{\"color\":\"#933c03\",\"name\":\"High Severity\"}},{\"series\":[\"LOW\"],\"queries\":[],\"properties\":{\"color\":\"#116b25\",\"name\":\"Low Severity\"}},{\"series\":[\"MEDIUM\"],\"queries\":[],\"properties\":{\"color\":\"#dfbe2e\",\"name\":\"Medium Severity\"}}]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| toInt(\"{{lookback}}\") as lookback\n| toLong(realtimeslice) as log_time\n| where log_time > (now() - 86400000*lookback)\n| formatDate(_timeslice, \"yyyy-MM-dd\") as day\n| count by day, severity\n| order by day asc\n| transpose row day column severity",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "80AE728048BE69AD",
+                    "key": "panel9BAE2300B9D66A40",
+                    "title": "Average Minutes to Response",
+                    "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2},\"title\":{\"fontSize\":16},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[{\"series\":[\"_avg_high\"],\"queries\":[],\"properties\":{\"color\":\"#bf2121\",\"displayType\":\"smooth\",\"name\":\"High Severity\"}},{\"series\":[\"_avg_low\"],\"queries\":[],\"properties\":{\"color\":\"#116b25\",\"displayType\":\"smooth\",\"name\":\"Low Severity\"}},{\"series\":[\"_avg_med\"],\"queries\":[],\"properties\":{\"color\":\"#dfbe2e\",\"displayType\":\"smooth\",\"name\":\"Medium Severity\"}}]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _messageTime\n| timeslice 1d\n| toInt(\"{{lookback}}\") as lookback\n| where _messageTime > (now() - 86400000*lookback)\n| where severity = \"MEDIUM\"\n| avg(avg_time_to_response) by _timeslice\n| round(_avg / 60) as _avg_med\n| fields - _avg\n| order by _timeslice asc",
+                            "queryType": "Logs",
+                            "queryKey": "B",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _messageTime\n| timeslice 1d\n| toInt(\"{{lookback}}\") as lookback\n| where _messageTime > (now() - 86400000*lookback)\n| where severity = \"LOW\"\n| avg(avg_time_to_response) by _timeslice\n| round(_avg / 60) as _avg_low\n| fields - _avg\n| order by _timeslice asc",
+                            "queryType": "Logs",
+                            "queryKey": "C",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _messageTime\n| timeslice 1d\n| toInt(\"{{lookback}}\") as lookback\n| where _messageTime > (now() - 86400000*lookback)\n| where severity = \"HIGH\"\n| avg(avg_time_to_response) by _timeslice\n| round(_avg / 60) as _avg_high\n| fields - _avg\n| order by _timeslice asc",
+                            "queryType": "Logs",
+                            "queryKey": "D",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "A77388E0B99EC516",
+                    "key": "panelAE0BC836ADD18A48",
+                    "title": "Average Minutes to Remediation",
+                    "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2},\"title\":{\"fontSize\":16},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[{\"series\":[\"_avg_high\"],\"queries\":[],\"properties\":{\"color\":\"#bf2121\",\"displayType\":\"smooth\",\"name\":\"High Severity\"}},{\"series\":[\"_avg_low\"],\"queries\":[],\"properties\":{\"color\":\"#116b25\",\"displayType\":\"smooth\",\"name\":\"Low Severity\"}},{\"series\":[\"_avg_med\"],\"queries\":[],\"properties\":{\"color\":\"#dfbe2e\",\"displayType\":\"smooth\",\"name\":\"Medium Severity\"}}]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _messageTime\n| timeslice 1d\n| toInt(\"{{lookback}}\") as lookback\n| where _messageTime > (now() - 86400000*lookback)\n| where severity = \"HIGH\"\n| avg(avg_time_to_remediation) by _timeslice\n| round(_avg / 3600) as _avg_high\n| fields - _avg\n| order by _timeslice asc",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _messageTime\n| timeslice 1d\n| toInt(\"{{lookback}}\") as lookback\n| where _messageTime > (now() - 86400000*lookback)\n| where severity = \"MEDIUM\"\n| avg(avg_time_to_remediation) by _timeslice\n| round(_avg / 3600) as _avg_med\n| fields - _avg\n| order by _timeslice asc",
+                            "queryType": "Logs",
+                            "queryKey": "B",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _messageTime\n| timeslice 1d\n| toInt(\"{{lookback}}\") as lookback\n| where _messageTime > (now() - 86400000*lookback)\n| where severity = \"LOW\"\n| avg(avg_time_to_remediation) by _timeslice\n| round(_avg / 3600) as _avg_low\n| fields - _avg\n| order by _timeslice asc",
+                            "queryType": "Logs",
+                            "queryKey": "C",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                }
+            ],
+            "variables": [
+                {
+                    "id": "8221A3F0C1094569",
+                    "name": "lookback",
+                    "displayName": null,
+                    "defaultValue": "7",
+                    "sourceDefinition": {
+                        "variableSourceType": "LogQueryVariableSourceDefinition",
+                        "query": "| toInt(7) as lookback",
+                        "field": "lookback"
+                    },
+                    "allowMultiSelect": false,
+                    "includeAllOption": false,
+                    "hideFromUI": false
+                }
+            ],
+            "coloringRules": []
+        },
+        {
+            "type": "DashboardV2SyncDefinition",
+            "name": "Insights - Executive View",
+            "description": "",
+            "title": "Insights - Executive View",
+            "rootPanel": null,
+            "theme": "Dark",
+            "topologyLabelMap": {
+                "data": {}
+            },
+            "refreshInterval": 0,
+            "timeRange": {
+                "type": "BeginBoundedTimeRange",
+                "from": {
+                    "type": "RelativeTimeRangeBoundary",
+                    "relativeTime": "-15m"
+                },
+                "to": null
+            },
+            "layout": {
+                "layoutType": "Grid",
+                "layoutStructures": [
+                    {
+                        "key": "panelPANE-C1BDF30092898A47",
+                        "structure": "{\"height\":7,\"width\":6,\"x\":11,\"y\":6}"
+                    },
+                    {
+                        "key": "panel33E9A247A017F949",
+                        "structure": "{\"height\":7,\"width\":5,\"x\":17,\"y\":6}"
+                    },
+                    {
+                        "key": "panel0C2A7B4DADA7DB43",
+                        "structure": "{\"height\":6,\"width\":5,\"x\":17,\"y\":0}"
+                    },
+                    {
+                        "key": "panel6C8018C8B7F2D846",
+                        "structure": "{\"height\":6,\"width\":6,\"x\":11,\"y\":0}"
+                    },
+                    {
+                        "key": "panel1A24A38788909948",
+                        "structure": "{\"height\":13,\"width\":11,\"x\":0,\"y\":0}"
+                    },
+                    {
+                        "key": "panelPANE-71A277598932AB4B",
+                        "structure": "{\"height\":9,\"width\":22,\"x\":0,\"y\":13}"
+                    }
+                ]
+            },
+            "panels": [
+                {
+                    "id": "17334215A8C9878F",
+                    "key": "panelPANE-C1BDF30092898A47",
+                    "title": "Insights by Month and Severity",
+                    "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"column\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"fillOpacity\":1,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[{\"series\":[\"HIGH\"],\"queries\":[],\"properties\":{\"color\":\"#bf2121\",\"displayType\":\"stacked\",\"name\":\"High Severity\"}},{\"series\":[\"MEDIUM\"],\"queries\":[],\"properties\":{\"color\":\"#dfbe2e\",\"displayType\":\"stacked\",\"name\":\"Medium Severity\"}},{\"series\":[\"LOW\"],\"queries\":[],\"properties\":{\"displayType\":\"stacked\",\"color\":\"#116b25\",\"name\":\"Low Severity\"}}]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YYYY-MM\") as month\n| count by month, severity\n| order by month asc\n| transpose row month column severity ",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "2A0BA8D3E8740704",
+                    "key": "panel33E9A247A017F949",
+                    "title": "Averge Minutes To Remediation",
+                    "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[{\"series\":[\"_avg_high\"],\"queries\":[],\"properties\":{\"color\":\"#933c03\",\"displayType\":\"smooth\",\"name\":\"High Severity\"}},{\"series\":[\"_avg_low\"],\"queries\":[],\"properties\":{\"color\":\"#116b25\",\"displayType\":\"smooth\",\"name\":\"Low Severity\"}},{\"series\":[\"_avg_med\"],\"queries\":[],\"properties\":{\"color\":\"#dfbe2e\",\"displayType\":\"smooth\",\"name\":\"Medium Severity\"}},{\"series\":[\"_avg_ctc\"],\"queries\":[],\"properties\":{\"color\":\"#005982\",\"displayType\":\"smooth\",\"name\":\"CTC\"}}]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where severity = \"HIGH\"\n| avg(avg_time_to_remediation) by month\n| round(_avg / 60) as _avg_high\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where severity = \"MEDIUM\"\n| avg(avg_time_to_remediation) by month\n| round(_avg / 60) as _avg_med\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "B",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where severity = \"LOW\"\n| avg(avg_time_to_remediation) by month\n| round(_avg / 60) as _avg_low\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "C",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where name matches \"*CTC*\"\n| avg(avg_time_to_remediation) by month\n| round(_avg / 60) as _avg_ctc\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "D",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "D45C146BBA7D3F4F",
+                    "key": "panel0C2A7B4DADA7DB43",
+                    "title": "Averge Minutes To Response",
+                    "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[{\"series\":[\"_avg_high\"],\"queries\":[],\"properties\":{\"color\":\"#933c03\",\"displayType\":\"smooth\",\"name\":\"High Severity\"}},{\"series\":[\"_avg_low\"],\"queries\":[],\"properties\":{\"color\":\"#116b25\",\"displayType\":\"smooth\",\"name\":\"Low Severity\"}},{\"series\":[\"_avg_med\"],\"queries\":[],\"properties\":{\"color\":\"#dfbe2e\",\"displayType\":\"smooth\",\"name\":\"Medium Severity\"}},{\"series\":[\"_avg_ctc\"],\"queries\":[],\"properties\":{\"color\":\"#005982\",\"displayType\":\"smooth\",\"name\":\"CTC\"}}]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where severity = \"HIGH\"\n| avg(avg_time_to_response) by month\n| round(_avg / 60) as _avg_high\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where severity = \"MEDIUM\"\n| avg(avg_time_to_response) by month\n| round(_avg / 60) as _avg_med\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "B",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where severity = \"LOW\"\n| avg(avg_time_to_response) by month\n| round(_avg / 60) as _avg_low\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "C",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where name matches \"*CTC*\"\n| avg(avg_time_to_response) by month\n| round(_avg / 60) as _avg_ctc\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "D",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "EE5272B4DDAC546A",
+                    "key": "panel6C8018C8B7F2D846",
+                    "title": "Averge Hours To Detection",
+                    "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[{\"series\":[\"_avg_high\"],\"queries\":[],\"properties\":{\"color\":\"#933c03\",\"displayType\":\"smooth\",\"name\":\"High Severity\"}},{\"series\":[\"_avg_low\"],\"queries\":[],\"properties\":{\"color\":\"#116b25\",\"displayType\":\"smooth\",\"name\":\"Low Severity\"}},{\"series\":[\"_avg_med\"],\"queries\":[],\"properties\":{\"color\":\"#dfbe2e\",\"displayType\":\"smooth\",\"name\":\"Medium Severity\"}},{\"series\":[\"_avg_ctc\"],\"queries\":[],\"properties\":{\"displayType\":\"smooth\",\"color\":\"#005982\",\"name\":\"CTC\"}}]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where severity = \"HIGH\"\n| avg(avg_time_to_detection) by month\n| round(_avg / 3600) as _avg_high\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where severity = \"MEDIUM\"\n| avg(avg_time_to_detection) by month\n| round(_avg / 3600) as _avg_med\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "B",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where severity = \"LOW\"\n| avg(avg_time_to_detection) by month\n| round(_avg / 3600) as _avg_low\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "C",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YY-MM\") as month\n| where name matches \"*CTC*\"\n| avg(avg_time_to_detection) by month\n| round(_avg / 3600) as _avg_ctc\n| fields - _avg\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "D",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "AD72837C84A33992",
+                    "key": "panel1A24A38788909948",
+                    "title": "Insights by Hour",
+                    "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"overrides\":[{\"series\":[\"this_month_hour\"],\"queries\":[],\"properties\":{\"displayType\":\"smooth\",\"name\":\"This Month\"}},{\"series\":[\"last_month_hour\"],\"queries\":[],\"properties\":{\"displayType\":\"smooth\",\"name\":\"Last Month\"}},{\"series\":[\"two_months_ago\"],\"queries\":[],\"properties\":{\"displayType\":\"smooth\",\"name\":\"Two Months Ago\"}}],\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"MM\") as month\n| formatDate(_timeslice, \"HH\") as hour\n| formatDate(now(), \"MM\") as this_month\n| where month = this_month\n| count as this_month_hour by hour\n| fillmissing values(\"00\", \"01\", \"02\", \"03\", \"04\", \"05\", \"06\", \"07\", \"08\", \"09\", \"10\", \"11\", \"12\", \"13\", \"14\", \"15\", \"16\", \"17\", \"18\", \"19\", \"20\", \"21\", \"22\", \"23\") in hour with 0 for this_month_hour\n| order by hour asc",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"MM\") as month\n| formatDate(_timeslice, \"HH\") as hour\n| formatDate(now(), \"MM\") as this_month\n| if(this_month = 1, 12, this_month - 1) as last_month\n| where month = last_month\n| count as last_month_hour by hour\n| fillmissing values(\"00\", \"01\", \"02\", \"03\", \"04\", \"05\", \"06\", \"07\", \"08\", \"09\", \"10\", \"11\", \"12\", \"13\", \"14\", \"15\", \"16\", \"17\", \"18\", \"19\", \"20\", \"21\", \"22\", \"23\") in hour with 0 for last_month_hour\n| order by hour asc",
+                            "queryType": "Logs",
+                            "queryKey": "B",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        },
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"MM\") as month\n| formatDate(_timeslice, \"HH\") as hour\n| formatDate(now(), \"MM\") as this_month\n| if(this_month = 1, 11,if(this_month = 2, 10, this_month - 2)) as two_months_ago\n| where month = two_months_ago\n| count as two_months_ago by hour\n| fillmissing values(\"00\", \"01\", \"02\", \"03\", \"04\", \"05\", \"06\", \"07\", \"08\", \"09\", \"10\", \"11\", \"12\", \"13\", \"14\", \"15\", \"16\", \"17\", \"18\", \"19\", \"20\", \"21\", \"22\", \"23\") in hour with 0 for two_months_ago\n| order by hour asc",
+                            "queryType": "Logs",
+                            "queryKey": "C",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "EF1E321972D52910",
+                    "key": "panelPANE-71A277598932AB4B",
+                    "title": "False Positive Ratio",
+                    "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2},\"title\":{\"fontSize\":16},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[]}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_view=cse_insight_metrics\n| toLong(realtimeslice) as _timeslice\n| formatDate(_timeslice, \"YYYY-MM\") as month\n| if(resolution = \"False Positive\", 1, 0) as fp_count\n| 1 as _row\n| total(_row) as total_insights by month\n| total(fp_count) as fp_insights by month\n| last(total_insights) as total_insights, last(fp_insights) as fp_insights by month\n| (fp_insights/total_insights) * 100 as fp_ratio\n| fields month, fp_ratio\n| order by month asc",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": {
+                        "type": "BeginBoundedTimeRange",
+                        "from": {
+                            "type": "RelativeTimeRangeBoundary",
+                            "relativeTime": "-1d"
+                        },
+                        "to": null
+                    },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                }
+            ],
+            "variables": [],
+            "coloringRules": []
+        },
+        {
+            "type": "SavedSearchWithScheduleSyncDefinition",
+            "name": "View for Insights Dashboard",
+            "search": {
+                "queryText": "_sourcecategory=\"asoc/INSIGHT/insights\" \n| json field=_raw \"closed\" nodrop \n| where !isNull(closed) \n| timeslice 1m \n| json field=_raw \"timeToResponse\" nodrop \n| json field=_raw \"timeToDetection\" nodrop \n| json field=_raw \"timeToRemediation\" nodrop \n| json field=_raw \"severity\" nodrop \n| json field=_raw \"name\" nodrop\n| json field=_raw \"resolution\" nodrop\n| json field=_raw \"closedBy\" as closed_by nodrop\n| json field=_raw \"id\" as uid\n| avg(timeToResponse) as avg_time_to_response, avg(timeToDetection) as avg_time_to_detection, avg(timeToRemediation) as avg_time_to_remediation by _timeslice, severity, name, resolution, closed_by, uid\n| _timeslice as realtimeslice \n| queryEndTime() as _timeslice\n| order by avg_time_to_remediation\n| save view cse_insight_metrics",
+                "defaultTimeRange": "-24h",
+                "byReceiptTime": false,
+                "viewName": "",
+                "viewStartTime": "1970-01-01T00:00:00Z",
+                "queryParameters": [],
+                "parsingMode": "Manual"
+            },
+            "searchSchedule": {
+                "cronExpression": "0 0 23 ? * 1,2,3,4,5,6,7 *",
+                "displayableTimeRange": "-90d",
+                "parseableTimeRange": {
+                    "type": "BeginBoundedTimeRange",
+                    "from": {
+                        "type": "RelativeTimeRangeBoundary",
+                        "relativeTime": "-12w6d"
+                    },
+                    "to": null
+                },
+                "timeZone": "America/Chicago",
+                "threshold": {
+                    "thresholdType": "group",
+                    "operator": "lt",
+                    "count": 0
+                },
+                "notification": {
+                    "taskType": "EmailSearchNotificationSyncDefinition",
+                    "toList": [
+                        "tdiderich@sumologic.com"
+                    ],
+                    "subjectTemplate": "Search Alert: {{AlertCondition}} found for {{SearchName}}",
+                    "includeQuery": true,
+                    "includeResultSet": true,
+                    "includeHistogram": true,
+                    "includeCsvAttachment": false
+                },
+                "scheduleType": "1Day",
+                "muteErrorEmails": false,
+                "parameters": []
+            },
+            "description": ""
+        }
+    ]
+}
