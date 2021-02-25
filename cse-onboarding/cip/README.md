@@ -8,7 +8,8 @@
 4. Creates a Collector for CNC connections
 5. Creates 3 Partitions for Records, Signals, and Insights
 6. Creates an Insight Metrics folder with stock Insights content
-7. Creates a SNARF folder with stock SNARF content
+7. Creates a CSE Dashboards folder with stock SNARF content
+8. Creates a Sample Queries folder with basic queries to clone/update for the customer
 
 # How do I deploy?
 
