@@ -1276,7 +1276,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| timeslice 1d\n| where metadata_product = \"Office 365\"\n| count by metadata_deviceeventid, _timeslice\n| transpose row _timeslice column metadata_deviceeventid",
+                            "queryString": "_index=sec_record*\n| timeslice 1d\n| where metadata_product = \"Office 365\"\n| count by metadata_deviceeventid, _timeslice\n| transpose row _timeslice column metadata_deviceeventid",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1307,7 +1307,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| where metadata_product = \"Office 365\" and !(isEmpty(device_ip_countryCode) OR device_ip_countryCode = \"Unassigned\" OR device_ip_countryCode = \"US\" OR toLowerCase(user_username) = \"unknown\") and !isNull(success) and success\n| count by user_username, device_ip_countryCode\n| order by _count",
+                            "queryString": "_index=sec_record*\n| where metadata_product = \"Office 365\" and !(isEmpty(device_ip_countryCode) OR device_ip_countryCode = \"Unassigned\" OR device_ip_countryCode = \"US\" OR toLowerCase(user_username) = \"unknown\") and !isNull(success) and success\n| count by user_username, device_ip_countryCode\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1338,7 +1338,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| where metadata_product = \"Office 365\" and !(isEmpty(device_ip_countryCode) OR device_ip_countryCode = \"Unassigned\" OR toLowerCase(user_username) = \"unknown\") and !isNull(success) and success\n| count_distinct(device_ip_countryCode) by user_username\n| where _count_distinct > 1\n| order by _count_distinct",
+                            "queryString": "_index=sec_record*\n| where metadata_product = \"Office 365\" and !(isEmpty(device_ip_countryCode) OR device_ip_countryCode = \"Unassigned\" OR toLowerCase(user_username) = \"unknown\") and !isNull(success) and success\n| count_distinct(device_ip_countryCode) by user_username\n| where _count_distinct > 1\n| order by _count_distinct",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1369,7 +1369,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| where metadata_product = \"Office 365\" and fields matches \"*IdsLocked*\"\n| count by user_username",
+                            "queryString": "_index=sec_record*\n| where metadata_product = \"Office 365\" and fields matches \"*IdsLocked*\"\n| count by user_username",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1400,7 +1400,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| json field=fields \"Operation\"\n| where metadata_product = \"Office 365\" and (toLowerCase(Operation) matches \"*dlp*\" or toLowerCase(metadata_deviceeventid) matches \"*dlp*\")\n| count, last(fields) as details by user_username, metadata_deviceeventid, Operation\n| order by _count",
+                            "queryString": "_index=sec_record*\n| json field=fields \"Operation\"\n| where metadata_product = \"Office 365\" and (toLowerCase(Operation) matches \"*dlp*\" or toLowerCase(metadata_deviceeventid) matches \"*dlp*\")\n| count, last(fields) as details by user_username, metadata_deviceeventid, Operation\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1682,7 +1682,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| json field=fields \"action\"\n| json field=fields \"device_name\"\n| json field=fields \"source_zone\"\n| where metadata_vendor matches \"Palo Alto*\" AND srcdevice_ip_isInternal AND !dstDevice_ip_isInternal AND action = \"allow\" AND listMatches matches \"*threat*\" AND listMatches matches \"*column:DstIp*\"\n| count by device_name,\n     srcdevice_ip,\n     srcdevice_ip_location,\n     source_zone,\n     listMatches,\n     dstDevice_ip,\n     dstPort,\n     dstDevice_ip_countryCode,\n     dstDevice_ip_isp,\n     dstDevice_ip_asnNumber\n| order by _count",
+                            "queryString": "_index=sec_record*\n| json field=fields \"action\"\n| json field=fields \"device_name\"\n| json field=fields \"source_zone\"\n| where metadata_vendor matches \"Palo Alto*\" AND srcdevice_ip_isInternal AND !dstDevice_ip_isInternal AND action = \"allow\" AND listMatches matches \"*threat*\" AND listMatches matches \"*column:DstIp*\"\n| count by device_name,\n     srcdevice_ip,\n     srcdevice_ip_location,\n     source_zone,\n     listMatches,\n     dstDevice_ip,\n     dstPort,\n     dstDevice_ip_countryCode,\n     dstDevice_ip_isp,\n     dstDevice_ip_asnNumber\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1713,7 +1713,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| json field=fields \"threat_category\"\n| json field=fields \"severity\"\n| where metadata_vendor matches \"Palo Alto*\" and (severity = \"low\" or severity = \"medium\" or severity = \"high\" or severity = \"critical\")\n| count by threat_category\n| order by _count",
+                            "queryString": "_index=sec_record*\n| json field=fields \"threat_category\"\n| json field=fields \"severity\"\n| where metadata_vendor matches \"Palo Alto*\" and (severity = \"low\" or severity = \"medium\" or severity = \"high\" or severity = \"critical\")\n| count by threat_category\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1744,7 +1744,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| json field=fields \"severity\"\n| where metadata_vendor matches \"Palo Alto*\" and (severity = \"low\" or severity = \"medium\" or severity = \"high\" or severity = \"critical\")\n| count by severity\n| order by _count",
+                            "queryString": "_index=sec_record*\n| json field=fields \"severity\"\n| where metadata_vendor matches \"Palo Alto*\" and (severity = \"low\" or severity = \"medium\" or severity = \"high\" or severity = \"critical\")\n| count by severity\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1775,7 +1775,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| where metadata_vendor matches \"Palo Alto*\" and (severity = \"low\" or severity = \"medium\" or severity = \"high\" or severity = \"critical\") and !isEmpty(action)\n| count by action\n| order by _count",
+                            "queryString": "_index=sec_record*\n| where metadata_vendor matches \"Palo Alto*\" and (severity = \"low\" or severity = \"medium\" or severity = \"high\" or severity = \"critical\") and !isEmpty(action)\n| count by action\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1806,7 +1806,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| json field=fields \"severity\"\n| where metadata_vendor matches \"Palo Alto*\" and (severity = \"high\" or severity = \"critical\") and metadata_deviceeventid = \"PALO_FW_THREAT\"\n| count by action,\n  description,\n  device_ip,\n  dstDevice_ip,\n  dstDevice_natIp,\n  dstPort,\n  file_basename,\n  ipProtocol,\n  severity,\n  srcdevice_ip,\n  srcDevice_natIp,\n  srcPort,\n  threat_name,\n  user_username\n| order by _count",
+                            "queryString": "_index=sec_record*\n| json field=fields \"severity\"\n| where metadata_vendor matches \"Palo Alto*\" and (severity = \"high\" or severity = \"critical\") and metadata_deviceeventid = \"PALO_FW_THREAT\"\n| count by action,\n  description,\n  device_ip,\n  dstDevice_ip,\n  dstDevice_natIp,\n  dstPort,\n  file_basename,\n  ipProtocol,\n  severity,\n  srcdevice_ip,\n  srcDevice_natIp,\n  srcPort,\n  threat_name,\n  user_username\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1837,7 +1837,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| json field=fields \"category\" nodrop\n| json field=fields \"device_name\" nodrop\n| json field=fields \"dg_hierarchy_1\" nodrop\n| json field=fields \"dg_hierarchy_2\" nodrop\n| json field=fields \"dg_hierarchy_3\" nodrop\n| json field=fields \"dg_hierarchy_4\" nodrop\n| json field=fields \"evidence\" nodrop\n| json field=fields \"generated_time\" nodrop\n| json field=fields \"object_id\" nodrop\n| json field=fields \"object_name\" nodrop\n| json field=fields \"source_ip\" nodrop\n| json field=fields \"sub_type\" nodrop\n| json field=fields \"username\" nodrop\n| json field=fields \"virtual_system\" nodrop\n| json field=fields \"virtual_system_id\" nodrop\n| json field=fields \"virtual_system_name\" nodrop\n| where metadata_vendor matches \"Palo Alto*\" and !(severity = \"low\" or severity = \"informational\") and metadata_deviceeventid = \"PALO_FW_CORRELATION\"\n| count by description,\ndevice_ip,\nsrcdevice_ip,\nthreat_name,\nuser_username,\ncategory,\ndevice_name,\ndg_hierarchy_1,\ndg_hierarchy_2,\ndg_hierarchy_3,\ndg_hierarchy_4,\nevidence,\ngenerated_time,\nobject_id,\nobject_name,\nseverity,\nsource_ip,\nsub_type,\nusername,\nvirtual_system,\nvirtual_system_id,\nvirtual_system_name\n| order by _count",
+                            "queryString": "_index=sec_record*\n| json field=fields \"category\" nodrop\n| json field=fields \"device_name\" nodrop\n| json field=fields \"dg_hierarchy_1\" nodrop\n| json field=fields \"dg_hierarchy_2\" nodrop\n| json field=fields \"dg_hierarchy_3\" nodrop\n| json field=fields \"dg_hierarchy_4\" nodrop\n| json field=fields \"evidence\" nodrop\n| json field=fields \"generated_time\" nodrop\n| json field=fields \"object_id\" nodrop\n| json field=fields \"object_name\" nodrop\n| json field=fields \"source_ip\" nodrop\n| json field=fields \"sub_type\" nodrop\n| json field=fields \"username\" nodrop\n| json field=fields \"virtual_system\" nodrop\n| json field=fields \"virtual_system_id\" nodrop\n| json field=fields \"virtual_system_name\" nodrop\n| where metadata_vendor matches \"Palo Alto*\" and !(severity = \"low\" or severity = \"informational\") and metadata_deviceeventid = \"PALO_FW_CORRELATION\"\n| count by description,\ndevice_ip,\nsrcdevice_ip,\nthreat_name,\nuser_username,\ncategory,\ndevice_name,\ndg_hierarchy_1,\ndg_hierarchy_2,\ndg_hierarchy_3,\ndg_hierarchy_4,\nevidence,\ngenerated_time,\nobject_id,\nobject_name,\nseverity,\nsource_ip,\nsub_type,\nusername,\nvirtual_system,\nvirtual_system_id,\nvirtual_system_name\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1901,7 +1901,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| where metadata_vendor = \"Proofpoint\" and metadata_product = \"Targeted Attack Protection\" AND !(toLowerCase(metadata_deviceeventid) = \"message_blocked\" or toLowerCase(metadata_deviceeventid) = \"message_permitted\") AND (threat_name = \"spam\" or threat_name = \"phish\" or threat_name = \"malware\")\n| count by action,\n  device_ip,\n  email_sender,\n  http_url,\n  http_userAgent,\n  srcdevice_ip,\n  threat_name,\n  threat_referenceUrl,\n  timestamp,\n  user_email,\n  user_username\n| order by _count",
+                            "queryString": "_index=sec_record*\n| where metadata_vendor = \"Proofpoint\" and metadata_product = \"Targeted Attack Protection\" AND !(toLowerCase(metadata_deviceeventid) = \"message_blocked\" or toLowerCase(metadata_deviceeventid) = \"message_permitted\") AND (threat_name = \"spam\" or threat_name = \"phish\" or threat_name = \"malware\")\n| count by action,\n  device_ip,\n  email_sender,\n  http_url,\n  http_userAgent,\n  srcdevice_ip,\n  threat_name,\n  threat_referenceUrl,\n  timestamp,\n  user_email,\n  user_username\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -1965,7 +1965,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| timeslice 1d\n| where metadata_vendor = \"Trend Micro\"\n| count by metadata_vendor, metadata_product, metadata_deviceeventid, _timeslice\n| transpose row _timeslice column metadata_vendor, metadata_product, metadata_deviceeventid",
+                            "queryString": "_index=sec_record*\n| timeslice 1d\n| where metadata_vendor = \"Trend Micro\"\n| count by metadata_vendor, metadata_product, metadata_deviceeventid, _timeslice\n| transpose row _timeslice column metadata_vendor, metadata_product, metadata_deviceeventid",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -2045,7 +2045,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| timeslice 1d\n| where metadata_vendor = \"Microsoft\" and metadata_product = \"Windows\"\n| count by metadata_vendor, metadata_product, metadata_deviceeventid, _timeslice\n| transpose row _timeslice column metadata_vendor, metadata_product, metadata_deviceeventid",
+                            "queryString": "_index=sec_record*\n| timeslice 1d\n| where metadata_vendor = \"Microsoft\" and metadata_product = \"Windows\"\n| count by metadata_vendor, metadata_product, metadata_deviceeventid, _timeslice\n| transpose row _timeslice column metadata_vendor, metadata_product, metadata_deviceeventid",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -2076,7 +2076,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| where metadata_vendor = \"Microsoft\" and metadata_product = \"Windows\" and user_username matches \"*adm_*\" AND metadata_deviceeventid = \"Security-4724\"\n| count by user_username, device_hostname\n| order by _count",
+                            "queryString": "_index=sec_record*\n| where metadata_vendor = \"Microsoft\" and metadata_product = \"Windows\" and user_username matches \"*adm_*\" AND metadata_deviceeventid = \"Security-4724\"\n| count by user_username, device_hostname\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -2107,7 +2107,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| json field=fields \"Computer\" as computer\n| json field=fields \"$['EventData.TargetUserName']\" as target\n| where metadata_vendor = \"Microsoft\" and metadata_product = \"Windows\" AND metadata_deviceeventid IN (\"Security-4728\", \"Security-4732\", \"Security-4756\")\n| count by user_username, device_hostname, computer, target\n| order by _count",
+                            "queryString": "_index=sec_record*\n| json field=fields \"Computer\" as computer\n| json field=fields \"$['EventData.TargetUserName']\" as target\n| where metadata_vendor = \"Microsoft\" and metadata_product = \"Windows\" AND metadata_deviceeventid IN (\"Security-4728\", \"Security-4732\", \"Security-4756\")\n| count by user_username, device_hostname, computer, target\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -2138,7 +2138,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| json field=fields \"LogonType\" as logontype\n| where metadata_vendor = \"Microsoft\" and metadata_product = \"Windows\" AND metadata_deviceeventid IN (\"Security-4624\", \"Security-4625\") and logontype = \"2\" and user_username matches \"*svc_*\"\n| count by user_username, device_hostname\n| order by _count",
+                            "queryString": "_index=sec_record*\n| json field=fields \"LogonType\" as logontype\n| where metadata_vendor = \"Microsoft\" and metadata_product = \"Windows\" AND metadata_deviceeventid IN (\"Security-4624\", \"Security-4625\") and logontype = \"2\" and user_username matches \"*svc_*\"\n| count by user_username, device_hostname\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
@@ -2169,7 +2169,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "panelType": "SumoSearchPanel",
                     "queries": [
                         {
-                            "queryString": "_index=sec_record*_security\n| where metadata_vendor = \"Microsoft\" and metadata_product = \"Windows\" AND metadata_deviceeventid = \"Security-4740\"\n| count by user_username\n| order by _count",
+                            "queryString": "_index=sec_record*\n| where metadata_vendor = \"Microsoft\" and metadata_product = \"Windows\" AND metadata_deviceeventid = \"Security-4740\"\n| count by user_username\n| order by _count",
                             "queryType": "Logs",
                             "queryKey": "A",
                             "metricsQueryMode": null,
