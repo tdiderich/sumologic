@@ -90,48 +90,6 @@ resource "sumologic_field" "siemsource" {
   data_type = "String"
 }
 
-resource "sumologic_field" "metadata_vendor" {
-  field_name = "metadata_vendor"
-  data_type = "String"
-}
-
-resource "sumologic_field" "metadata_product" {
-  field_name = "metadata_product"
-  data_type = "String"
-}
-
-resource "sumologic_field" "metadata_deviceeventid" {
-  field_name = "metadata_deviceeventid"
-  data_type = "String"
-}
-
-resource "sumologic_field" "srcdevice_ip" {
-  field_name = "srcdevice_ip"
-  data_type = "String"
-}
-
-resource "sumologic_field" "file_hash_md5" {
-  field_name = "file_hash_md5"
-  data_type = "String"
-}
-
-resource "sumologic_field" "file_hash_sha1" {
-  field_name = "file_hash_sha1"
-  data_type = "String"
-}
-
-resource "sumologic_field" "file_hash_sha256" {
-  field_name = "file_hash_sha256"
-  data_type = "String"
-}
-
-resource "null_resource" "previous" {}
-
-resource "time_sleep" "wait_120_seconds" {
-  depends_on = [null_resource.previous]
-  create_duration = "120s"
-}
-
 ### HTTP SOURCES ###
 
 resource "sumologic_collector" "cse_internal" {
@@ -1064,7 +1022,7 @@ resource "sumologic_content" "cse_dashboards" {
             },
             "panels": [
                 {
-                    "id": "48830952E1B2ED7C",
+                    "id": "39280F01360D86DB",
                     "key": "panelPANE-EC5055E694CE7A4A",
                     "title": "Total Event Volume",
                     "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2},\"title\":{\"fontSize\":16},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[]}",
@@ -1095,7 +1053,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "1AA75157A0284580",
+                    "id": "1BE0CD982ECCD009",
                     "key": "panelPANE-6C8CBFFBB8391A40",
                     "title": "Events by Vendor and Product",
                     "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2},\"title\":{\"fontSize\":16},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[]}",
@@ -1126,7 +1084,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "C0AF8036EB602B3D",
+                    "id": "3976D6E58C1B86FA",
                     "key": "panelPANE-51D272A38569884A",
                     "title": "Top Talkers",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -1157,7 +1115,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "907849C28BD2DCB4",
+                    "id": "EDBD6F26873B10C8",
                     "key": "panel5BAC0541BAA83840",
                     "title": "Top Destinations",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -1188,7 +1146,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "CF9E3813E9774103",
+                    "id": "C60BB6943022EB53",
                     "key": "panelPANE-06E62C0FA1D00B40",
                     "title": "Rare Domains",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -1268,7 +1226,7 @@ resource "sumologic_content" "cse_dashboards" {
             },
             "panels": [
                 {
-                    "id": "CF178D9924F9538B",
+                    "id": "87EF86139851BFE4",
                     "key": "panelPANE-3D7A83B8BC3F0A42",
                     "title": "Event Trend",
                     "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2},\"title\":{\"fontSize\":16},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[]}",
@@ -1299,7 +1257,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "6648828C08CE8B58",
+                    "id": "A38FB066C52D9FD5",
                     "key": "panelPANE-8D8B53FA8B7F0B48",
                     "title": "Successful Non-US Logins",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -1330,7 +1288,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "67070CF420E72260",
+                    "id": "8628D3EAEECACE38",
                     "key": "panelPANE-FE7AC796B6FB284C",
                     "title": "Users that Successfully Logged in from 2+ Countries",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -1361,7 +1319,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "84B0699CF9601B9A",
+                    "id": "3E47409C07648DBF",
                     "key": "panelPANE-D4B76A1FA14FB944",
                     "title": "User Account Lockouts - attempted logins on locked account for last 7 days",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -1392,7 +1350,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "B240136BBF3D34B8",
+                    "id": "028086DA58B3134C",
                     "key": "panelPANE-99D55CAAB2F7584F",
                     "title": "DLP Violations",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -1468,7 +1426,7 @@ resource "sumologic_content" "cse_dashboards" {
             },
             "panels": [
                 {
-                    "id": "15A9179E92BF6A96",
+                    "id": "0EF892BEF62E0F06",
                     "key": "panelPANE-D183AF2FBEFFA844",
                     "title": "Distinct Days + Percentage of Logins by IP/User",
                     "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"series\":{}}",
@@ -1499,7 +1457,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "614A715B10183571",
+                    "id": "2CCA0B762EEA0729",
                     "key": "panel63CCFAF7B0A04A48",
                     "title": "Distinct Days + Percentage of Events by UserAgent/User",
                     "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"series\":{}}",
@@ -1530,7 +1488,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "080A631E1EB7782F",
+                    "id": "790AA6399AAE6F52",
                     "key": "panel36D874DB8ECBF843",
                     "title": "Distinct Days + Percentage of Events by Operation",
                     "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"series\":{}}",
@@ -1561,7 +1519,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "194FAA5A726BBA2B",
+                    "id": "A4DB7F81E1EA1BDA",
                     "key": "panelPANE-E53C31E8906D0849",
                     "title": "Landspeed Violations",
                     "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"series\":{}}",
@@ -1594,7 +1552,7 @@ resource "sumologic_content" "cse_dashboards" {
             ],
             "variables": [
                 {
-                    "id": "DB9BC9A6676D4728",
+                    "id": "7F3221D8B72931C0",
                     "name": "user_username",
                     "displayName": null,
                     "defaultValue": "*",
@@ -1608,7 +1566,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "hideFromUI": false
                 },
                 {
-                    "id": "3291019E9DB524CC",
+                    "id": "FCFD9FAA38B81268",
                     "name": "device_ip",
                     "displayName": null,
                     "defaultValue": "*",
@@ -1674,7 +1632,7 @@ resource "sumologic_content" "cse_dashboards" {
             },
             "panels": [
                 {
-                    "id": "7C52D6D3A812FDBB",
+                    "id": "592B2B8C95F1590B",
                     "key": "panelPANE-FA7CB8BD98677B49",
                     "title": "Allowed Connections to IPs on Threat List",
                     "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2},\"title\":{\"fontSize\":16},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[]}",
@@ -1705,7 +1663,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "D97F62649BAB5FFA",
+                    "id": "E00EA461AF95CC92",
                     "key": "panelPANE-3688E28CA47B1B48",
                     "title": "Threat Events by Category",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"column\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"fillOpacity\":1,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{}}",
@@ -1736,7 +1694,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "2281F6702436D650",
+                    "id": "82AB467AC63218C1",
                     "key": "panel74DE34C4B3EE694A",
                     "title": "Threat Events by Severity",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"column\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"fillOpacity\":1,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{}}",
@@ -1767,7 +1725,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "384A13F6F421166F",
+                    "id": "55287A232D0186D0",
                     "key": "panelPANE-172A25D49EEA9A45",
                     "title": "Threat Events by Action",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"bar\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"fillOpacity\":1,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{}}",
@@ -1798,7 +1756,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "5CE6CB12C32D30FC",
+                    "id": "F03B0EC6235541FE",
                     "key": "panel72CEB7099B18C845",
                     "title": "Critical & High Severity IDS/IPS Events",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -1829,7 +1787,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "8ED182CD07140B79",
+                    "id": "C1E7725F6D8294B7",
                     "key": "panelF70AF94EAF876847",
                     "title": "Palo Alto Correlation Alerts",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -1893,7 +1851,7 @@ resource "sumologic_content" "cse_dashboards" {
             },
             "panels": [
                 {
-                    "id": "68EE125A1CA11945",
+                    "id": "B57FF694224C06A7",
                     "key": "panelPANE-57DF0D38A28B5A4F",
                     "title": "Proofpoint Phishing Emails Clicked",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -1920,6 +1878,363 @@ resource "sumologic_content" "cse_dashboards" {
                         },
                         "to": null
                     },
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                }
+            ],
+            "variables": [],
+            "coloringRules": []
+        },
+        {
+            "type": "DashboardV2SyncDefinition",
+            "name": "Sample Searches",
+            "description": "",
+            "title": "Sample Searches",
+            "rootPanel": null,
+            "theme": "Light",
+            "topologyLabelMap": {
+                "data": {}
+            },
+            "refreshInterval": 0,
+            "timeRange": {
+                "type": "BeginBoundedTimeRange",
+                "from": {
+                    "type": "RelativeTimeRangeBoundary",
+                    "relativeTime": "-15m"
+                },
+                "to": null
+            },
+            "layout": {
+                "layoutType": "Grid",
+                "layoutStructures": [
+                    {
+                        "key": "panelPANE-F62B526EBDFFF849",
+                        "structure": "{\"height\":3,\"width\":15,\"x\":9,\"y\":0}"
+                    },
+                    {
+                        "key": "panelPANE-9702096F8930AB46",
+                        "structure": "{\"height\":3,\"width\":9,\"x\":0,\"y\":0}"
+                    },
+                    {
+                        "key": "panel0E6CC0DABD3B2A48",
+                        "structure": "{\"height\":4,\"width\":9,\"x\":0,\"y\":3}"
+                    },
+                    {
+                        "key": "panelF5AB4109890A4B42",
+                        "structure": "{\"height\":4,\"width\":15,\"x\":9,\"y\":3}"
+                    },
+                    {
+                        "key": "panel3D36A5A3B470C949",
+                        "structure": "{\"height\":6,\"width\":9,\"x\":0,\"y\":7}"
+                    },
+                    {
+                        "key": "panel347569D880BE784E",
+                        "structure": "{\"height\":6,\"width\":15,\"x\":9,\"y\":7}"
+                    },
+                    {
+                        "key": "panel641649E2B74A0948",
+                        "structure": "{\"height\":8,\"width\":9,\"x\":0,\"y\":13}"
+                    },
+                    {
+                        "key": "panel0AB09527A5288947",
+                        "structure": "{\"height\":8,\"width\":15,\"x\":9,\"y\":13}"
+                    },
+                    {
+                        "key": "panel355B619EB0ECEB43",
+                        "structure": "{\"height\":8,\"width\":9,\"x\":0,\"y\":21}"
+                    },
+                    {
+                        "key": "panelF205C02C89E08A4E",
+                        "structure": "{\"height\":8,\"width\":15,\"x\":9,\"y\":21}"
+                    },
+                    {
+                        "key": "panel51A8C1859D709947",
+                        "structure": "{\"height\":8,\"width\":9,\"x\":0,\"y\":29}"
+                    },
+                    {
+                        "key": "panel2D56DD3D81404A45",
+                        "structure": "{\"height\":8,\"width\":15,\"x\":9,\"y\":29}"
+                    },
+                    {
+                        "key": "panelE7CC41539AC74844",
+                        "structure": "{\"height\":8,\"width\":9,\"x\":0,\"y\":37}"
+                    },
+                    {
+                        "key": "panelE119A9C1A5A50945",
+                        "structure": "{\"height\":8,\"width\":15,\"x\":9,\"y\":37}"
+                    },
+                    {
+                        "key": "panel6EE1451EBFC8394F",
+                        "structure": "{\"height\":8,\"width\":9,\"x\":0,\"y\":37,\"minHeight\":2,\"minWidth\":1}"
+                    },
+                    {
+                        "key": "panelD310AE6CA5636A42",
+                        "structure": "{\"height\":8,\"width\":15,\"x\":9,\"y\":37,\"minHeight\":3,\"minWidth\":3}"
+                    }
+                ]
+            },
+            "panels": [
+                {
+                    "id": "01773D29445DE3E0",
+                    "key": "panelPANE-F62B526EBDFFF849",
+                    "title": "Output",
+                    "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"overrides\":[],\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "// BASE QUERY - all data past 24hrs\n_index=sec_record_*\n| count",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": null,
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "06BE62A53EAF44BC",
+                    "key": "panelPANE-9702096F8930AB46",
+                    "title": "1. Base Query - all data past 24hrs",
+                    "visualSettings": "{\"general\":{\"mode\":\"TextPanel\",\"type\":\"text\",\"displayType\":\"default\"},\"title\":{\"fontSize\":14},\"series\":{},\"text\":{\"format\":\"markdown\"}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "TextPanel",
+                    "text": "\\_index=sec\\_record\\_* </br>\n| count"
+                },
+                {
+                    "id": "C793ECE0DB2A2E53",
+                    "key": "panel0E6CC0DABD3B2A48",
+                    "title": "2. Filter by vendor / product / event id",
+                    "visualSettings": "{\"general\":{\"mode\":\"TextPanel\",\"type\":\"text\",\"displayType\":\"default\"},\"title\":{\"fontSize\":14},\"series\":{},\"text\":{\"format\":\"markdown\"}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "TextPanel",
+                    "text": "\\_index=sec\\_record\\_*\n<br />| where metadata_vendor = \"Palo Alto Networks\" and metadata_product = \"Next Generation Firewall\" and metadata_deviceEventId = \"PALO_FW_THREAT\"\n<br />| count by metadata_vendor, metadata_product, metadata_deviceEventId"
+                },
+                {
+                    "id": "825C1564A869EDB9",
+                    "key": "panelF5AB4109890A4B42",
+                    "title": "Output",
+                    "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"overrides\":[],\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_index=sec_record*\n| where metadata_vendor = \"Palo Alto Networks\" and metadata_product = \"Next Generation Firewall\" and metadata_deviceEventId = \"PALO_FW_THREAT\"\n| count by metadata_vendor, metadata_product, metadata_deviceEventId",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": null,
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "A90D2C39F8AE261C",
+                    "key": "panel3D36A5A3B470C949",
+                    "title": "3. All logs with an IP matching 10*",
+                    "visualSettings": "{\"general\":{\"mode\":\"TextPanel\",\"type\":\"text\",\"displayType\":\"default\"},\"title\":{\"fontSize\":14},\"series\":{},\"text\":{\"format\":\"markdown\"}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "TextPanel",
+                    "text": "\\_index=sec\\_record\\_\\*\n</br>| where srcDevice_ip matches \"10*\"\n\n--\n\nAll search operators can be found here -> https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators"
+                },
+                {
+                    "id": "30B549E5EEBCC730",
+                    "key": "panel347569D880BE784E",
+                    "title": "Output",
+                    "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"overrides\":[],\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_index=sec_record_*\n| where srcDevice_ip matches \"10*\"\n| count by srcDevice_ip",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": null,
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "7009A7C4A4C5211F",
+                    "key": "panel641649E2B74A0948",
+                    "title": "4. All logs where a file hash is mapped",
+                    "visualSettings": "{\"general\":{\"mode\":\"TextPanel\",\"type\":\"text\",\"displayType\":\"default\"},\"title\":{\"fontSize\":14},\"series\":{},\"text\":{\"format\":\"markdown\"}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "TextPanel",
+                    "text": "\\_index=sec\\_record\\_\\*\n</br>| where !isEmpty(file_hash_md5) or !isEmpty(file_hash_sha1) or !isEmpty(file_hash_sha256)\n\n--\n\nAll search operators can be found here -> https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators"
+                },
+                {
+                    "id": "1827D8579438F499",
+                    "key": "panel0AB09527A5288947",
+                    "title": "Output",
+                    "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"overrides\":[],\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_index=sec_record_*\n| where !isEmpty(file_hash_md5) or !isEmpty(file_hash_sha1) or !isEmpty(file_hash_sha256)\n| count by file_hash_md5, file_hash_sha1, file_hash_sha256",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": null,
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "785391C566B99EF9",
+                    "key": "panel355B619EB0ECEB43",
+                    "title": "5. Counting and ordering by field values",
+                    "visualSettings": "{\"general\":{\"mode\":\"TextPanel\",\"type\":\"text\",\"displayType\":\"default\"},\"title\":{\"fontSize\":14},\"series\":{},\"text\":{\"format\":\"markdown\"}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "TextPanel",
+                    "text": "\\_index=sec\\_record\\_\\*\n</br>// \"as foo\" is optional - default value is _count \n</br>| count as foo by metadata_vendor, metadata_product, metadata_deviceEventId\n</br>| order by foo \n"
+                },
+                {
+                    "id": "0A2D8FEA11B6923F",
+                    "key": "panelF205C02C89E08A4E",
+                    "title": "Output",
+                    "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"overrides\":[],\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_index=sec_record_*\n| count as foo by metadata_vendor, metadata_product, metadata_deviceEventId\n| order by foo",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": null,
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "3F3133FA9248BFA0",
+                    "key": "panel51A8C1859D709947",
+                    "title": "6. Graphing time series data",
+                    "visualSettings": "{\"general\":{\"mode\":\"TextPanel\",\"type\":\"text\",\"displayType\":\"default\"},\"title\":{\"fontSize\":14},\"series\":{},\"text\":{\"format\":\"markdown\"}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "TextPanel",
+                    "text": "\\_index=sec\\_record\\_\\*\n</br>// timeslice can take in many options like 1d for daily buckets, 1m for minute buckets, etc \n</br>| timeslice 1h\n</br>| count by metadata_vendor, metadata_product, metadata_deviceEventId, _timeslice\n</br>| transpose row _timeslice column metadata_vendor, metadata_product, metadata_deviceEventId"
+                },
+                {
+                    "id": "B61188A537D38BBD",
+                    "key": "panel2D56DD3D81404A45",
+                    "title": "Output ",
+                    "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"line\",\"displayType\":\"default\",\"markerSize\":5,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":1,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"title\":\"\",\"titleFontSize\":12,\"labelFontSize\":12,\"logarithmic\":false}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"Categorical Default\"},\"overrides\":[],\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_index=sec_record_*\n// timeslice can take in many options like 1d for daily buckets, 1m for minute buckets, etc\n| timeslice 1h\n| count by metadata_vendor, metadata_product, metadata_deviceEventId, _timeslice\n| transpose row _timeslice column metadata_vendor, metadata_product, metadata_deviceEventId",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": null,
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "9E0FFBEF534352AF",
+                    "key": "panelE7CC41539AC74844",
+                    "title": "7. Avg, Max, Min, Sum and beyond",
+                    "visualSettings": "{\"general\":{\"mode\":\"TextPanel\",\"type\":\"text\",\"displayType\":\"default\"},\"title\":{\"fontSize\":14},\"series\":{},\"text\":{\"format\":\"markdown\"}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "TextPanel",
+                    "text": "\\_index=sec\\_record\\_\\*\n</br>| timeslice 1h\n</br>// counting by timeslice to get a number to work with \n</br>| count by _timeslice\n</br>| avg(_count) as avg_count_per_hour, max(_count) as max_count_seen, min(_count) as min_count_seen, sum(_count) as total_count\n\n-- \n\nAverage, Max, Min, and Sum used - other operators can be found in the docs -> https://help.sumologic.com/05Search/Search-Query-Language/aaGroup"
+                },
+                {
+                    "id": "B5A834FC5B256F89",
+                    "key": "panelE119A9C1A5A50945",
+                    "title": "Output ",
+                    "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"overrides\":[],\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_index=sec_record_*\n| timeslice 1h\n// counting by timeslice to get a number to work with\n| count by _timeslice\n| avg(_count) as avg_count_per_hour, max(_count) as max_count_seen, min(_count) as min_count_seen, sum(_count) as total_count",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": null,
+                    "coloringRules": null,
+                    "linkedDashboards": []
+                },
+                {
+                    "id": "56C64342ECEF4ABF",
+                    "key": "panel6EE1451EBFC8394F",
+                    "title": "8. Compare with timeshift",
+                    "visualSettings": "{\"general\":{\"mode\":\"TextPanel\",\"type\":\"text\",\"displayType\":\"default\"},\"title\":{\"fontSize\":14},\"series\":{},\"text\":{\"format\":\"markdown\"}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "TextPanel",
+                    "text": "\\_index=sec\\_record\\_\\*\n</br>// count of logs for comparison\n</br>| count \n</br>// timeframe to compare against (this is 7 days back, 2 times = 7 days ago + 14 days ago) \n</br>| compare with timeshift 7d 2"
+                },
+                {
+                    "id": "D6290AFDA918D80F",
+                    "key": "panelD310AE6CA5636A42",
+                    "title": "Output ",
+                    "visualSettings": "{\"title\":{\"fontSize\":14},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"axes\":{\"axisX\":{\"titleFontSize\":12,\"labelFontSize\":12},\"axisY\":{\"titleFontSize\":12,\"labelFontSize\":12}},\"overrides\":[],\"series\":{}}",
+                    "keepVisualSettingsConsistentWithParent": true,
+                    "panelType": "SumoSearchPanel",
+                    "queries": [
+                        {
+                            "queryString": "_index=sec_record_*\n| count \n| compare with timeshift 7d 2",
+                            "queryType": "Logs",
+                            "queryKey": "A",
+                            "metricsQueryMode": null,
+                            "metricsQueryData": null,
+                            "tracesQueryData": null,
+                            "parseMode": "Manual",
+                            "timeSource": "Message"
+                        }
+                    ],
+                    "description": "",
+                    "timeRange": null,
                     "coloringRules": null,
                     "linkedDashboards": []
                 }
@@ -1957,7 +2272,7 @@ resource "sumologic_content" "cse_dashboards" {
             },
             "panels": [
                 {
-                    "id": "CB460DD7FF8C1F29",
+                    "id": "2F8E60302ACA9E76",
                     "key": "panelPANE-6FABC1E2A454CB4F",
                     "title": "Event Trend",
                     "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\",\"displayType\":\"default\",\"outlierBandColor\":\"#FDECF5\",\"outlierBandMarkerColor\":\"#F032A9\",\"outlierBandFillOpacity\":0.5,\"outlierBandLineThickness\":2,\"outlierBandMarkerSize\":10,\"outlierBandMarkerType\":\"triangle\",\"outlierBandLineDashType\":\"solid\",\"outlierBandDisplayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2},\"title\":{\"fontSize\":16},\"axes\":{\"axisX\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{}}",
@@ -2037,7 +2352,7 @@ resource "sumologic_content" "cse_dashboards" {
             },
             "panels": [
                 {
-                    "id": "E969D8A28A3D7D97",
+                    "id": "2A1C75E8149B8E15",
                     "key": "panelPANE-B7EA901F90DE9B40",
                     "title": "Windows Event Trend by Event ID",
                     "visualSettings": "{\"general\":{\"mode\":\"timeSeries\",\"type\":\"line\",\"displayType\":\"default\",\"markerSize\":0,\"lineDashType\":\"solid\",\"markerType\":\"none\",\"lineThickness\":2},\"title\":{\"fontSize\":16},\"axes\":{\"axisX\":{\"showLabels\":true,\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":10},\"axisY\":{\"showLabels\":true,\"title\":\"\",\"titleFontSize\":11,\"labelFontSize\":12,\"logarithmic\":false,\"gridColor\":\"#dde4e9\"}},\"legend\":{\"enabled\":true,\"verticalAlign\":\"bottom\",\"fontSize\":12,\"maxHeight\":50,\"showAsTable\":false,\"wrap\":true},\"color\":{\"family\":\"scheme9\"},\"series\":{},\"overrides\":[]}",
@@ -2068,7 +2383,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "9B14F7A172E8A691",
+                    "id": "3CEC3B08EE47B475",
                     "key": "panelPANE-AEC2DE16BA47B943",
                     "title": "Admin Password Resets",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -2099,7 +2414,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "4D396EB92EAE799A",
+                    "id": "D2A4FB53DEA448AC",
                     "key": "panelDCA9934A874E2940",
                     "title": "Users Added to Global Security Groups",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -2130,7 +2445,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "4E5C6DF24B37ACB8",
+                    "id": "DED46831C8F1B4A2",
                     "key": "panel361FF294A4F29B4F",
                     "title": "Service Accounts with Interactive Logins",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -2161,7 +2476,7 @@ resource "sumologic_content" "cse_dashboards" {
                     "linkedDashboards": []
                 },
                 {
-                    "id": "9F68B87C091FEEE0",
+                    "id": "18BEF72C9216126A",
                     "key": "panelD6F18170A8D0484E",
                     "title": "Account Lockouts",
                     "visualSettings": "{\"title\":{\"fontSize\":16},\"general\":{\"type\":\"table\",\"displayType\":\"default\",\"paginationPageSize\":100,\"fontSize\":12,\"mode\":\"timeSeries\"},\"series\":{}}",
@@ -2194,138 +2509,6 @@ resource "sumologic_content" "cse_dashboards" {
             ],
             "variables": [],
             "coloringRules": []
-        }
-    ]
-})
-}
-
-resource "sumologic_content" "sample_searches" {
-    parent_id = data.sumologic_personal_folder.personalFolder.id
-    depends_on = [time_sleep.wait_120_seconds]
-    config = jsonencode({
-    "type": "FolderSyncDefinition",
-    "name": "Sample Searches",
-    "description": "",
-    "children": [
-        {
-            "type": "SavedSearchWithScheduleSyncDefinition",
-            "name": "1. Base Query - all data past 24hrs",
-            "search": {
-                "queryText": "// BASE QUERY - all data past 24hrs\n_index=sec_record_*",
-                "defaultTimeRange": "-60m",
-                "byReceiptTime": false,
-                "viewName": "",
-                "viewStartTime": "1970-01-01T00:00:00Z",
-                "queryParameters": [],
-                "parsingMode": "AutoParse"
-            },
-            "searchSchedule": null,
-            "description": ""
-        },
-        {
-            "type": "SavedSearchWithScheduleSyncDefinition",
-            "name": "2. Filter by vendor / product / event id",
-            "search": {
-                "queryText": "// ALL LOGS FOR SPECIFIC VENDOR / PRODUCT / EVENTID\n_index=sec_record_*\n| where metadata_vendor = \"Palo Alto Networks\" and metadata_product = \"Next Generation Firewall\" and metadata_deviceeventid = \"PALO_FW_THREAT\"",
-                "defaultTimeRange": "-60m",
-                "byReceiptTime": false,
-                "viewName": "",
-                "viewStartTime": "1970-01-01T00:00:00Z",
-                "queryParameters": [],
-                "parsingMode": "AutoParse"
-            },
-            "searchSchedule": null,
-            "description": ""
-        },
-        {
-            "type": "SavedSearchWithScheduleSyncDefinition",
-            "name": "3. All logs with an IP matching 10*",
-            "search": {
-                "queryText": "// ALL LOGS WITH IP MATCHING 10*\n_index=sec_record_*\n\n// all search operators can be found here -> https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators\n| where srcdevice_ip matches \"10*\"",
-                "defaultTimeRange": "-60m",
-                "byReceiptTime": false,
-                "viewName": "",
-                "viewStartTime": "1970-01-01T00:00:00Z",
-                "queryParameters": [],
-                "parsingMode": "AutoParse"
-            },
-            "searchSchedule": null,
-            "description": ""
-        },
-        {
-            "type": "SavedSearchWithScheduleSyncDefinition",
-            "name": "4. All logs where a file hash is mapped",
-            "search": {
-                "queryText": "// ALL LOGS WITH A FILE HASH\n_index=sec_record_*\n\n// all search operators can be found here -> https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators\n| where !isEmpty(file_hash_md5) or !isEmpty(file_hash_sha1) or !isEmpty(file_hash_sha256)",
-                "defaultTimeRange": "-60m",
-                "byReceiptTime": false,
-                "viewName": "",
-                "viewStartTime": "1970-01-01T00:00:00Z",
-                "queryParameters": [],
-                "parsingMode": "AutoParse"
-            },
-            "searchSchedule": null,
-            "description": ""
-        },
-        {
-            "type": "SavedSearchWithScheduleSyncDefinition",
-            "name": "5. Counting and ordering by field values",
-            "search": {
-                "queryText": "// COUNTING BY + ORDER BY FIELD(S)\n_index=sec_record_*\n\n// \"as foo\" is optional - default value is _count \n| count as foo by metadata_vendor, metadata_product, metadata_deviceeventid\n| order by foo ",
-                "defaultTimeRange": "-60m",
-                "byReceiptTime": false,
-                "viewName": "",
-                "viewStartTime": "1970-01-01T00:00:00Z",
-                "queryParameters": [],
-                "parsingMode": "AutoParse"
-            },
-            "searchSchedule": null,
-            "description": ""
-        },
-        {
-            "type": "SavedSearchWithScheduleSyncDefinition",
-            "name": "6. Graphing time series data",
-            "search": {
-                "queryText": "// GRAPHING TIME SERIES DATA \n_index=sec_record_*\n\n// timeslice can take in many options like 1d for daily buckets, 1m for minute buckets, etc \n| timeslice 1h\n| count by metadata_vendor, metadata_product, metadata_deviceeventid, _timeslice\n| transpose row _timeslice column metadata_vendor, metadata_product, metadata_deviceeventid",
-                "defaultTimeRange": "-24h",
-                "byReceiptTime": false,
-                "viewName": "",
-                "viewStartTime": "1970-01-01T00:00:00Z",
-                "queryParameters": [],
-                "parsingMode": "AutoParse"
-            },
-            "searchSchedule": null,
-            "description": ""
-        },
-        {
-            "type": "SavedSearchWithScheduleSyncDefinition",
-            "name": "7. Avg, Max, Min, Sum and beyond",
-            "search": {
-                "queryText": "// OTHER AGGREGATE OPERATORS \n_index=sec_record_*\n| timeslice 1h\n\n// counting by timeslice to get a number to work with \n| count by _timeslice\n\n// average, max, min, and sum used - other operators can be found in the docs -> https://help.sumologic.com/05Search/Search-Query-Language/aaGroup\n| avg(_count) as avg_count_per_hour, max(_count) as max_count_seen, min(_count) as min_count_seen, sum(_count) as total_count",
-                "defaultTimeRange": "-24h",
-                "byReceiptTime": false,
-                "viewName": "",
-                "viewStartTime": "1970-01-01T00:00:00Z",
-                "queryParameters": [],
-                "parsingMode": "AutoParse"
-            },
-            "searchSchedule": null,
-            "description": ""
-        },
-        {
-            "type": "SavedSearchWithScheduleSyncDefinition",
-            "name": "8. Compare with timeshift",
-            "search": {
-                "queryText": "// COMPARE AGINST SAME TIME WINDOW X DAYS AGO\n_index=sec_record_*\n\n// count of logs to compare to \n| count \n\n// timeframe to compare against (this is 7 days back, 2 times = 7 days ago + 14 days ago) \n| compare with timeshift 7d 2",
-                "defaultTimeRange": "-60m",
-                "byReceiptTime": false,
-                "viewName": "",
-                "viewStartTime": "1970-01-01T00:00:00Z",
-                "queryParameters": [],
-                "parsingMode": "AutoParse"
-            },
-            "searchSchedule": null,
-            "description": ""
         }
     ]
 })
