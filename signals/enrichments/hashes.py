@@ -36,9 +36,17 @@ def handle_hash(file_hash):
             else:
                 print('Err enriching Signal')    
             if report['positives'] > 0:
-                ## insert logic here for positive hits 
-                ## just passing it for now 
+                ## custom logic for what to do when there is a positive match
                 pass
+                ## ex. send to CIP HTTP source 
+                # payload = {'full_signal': signal, 'vt_report': report}
+                # for k, v in signal['allRecords'][0].items():
+                #     if k != 'fields':
+                #         payload[k] = v
+                # payload['threat_name'] = f'Postive Match in VirusTotal for File Hash - {file_hash}'
+                # payload['description'] = f'Postive Match in VirusTotal for File Hash - {file_hash}'
+                # payload['severity'] = 10
+                # requests.post(url, json=payload)
     else:
         response = report.text
         print('VirusTotal API Call Failure: ' + response)  
@@ -48,27 +56,30 @@ while hasNextPage:
         hasNextPage = False
         print('Hit max offset of 10k')
     else:
-        cse_signals= f'https://{cse_tenant_name}.portal.jask.ai/api/v1/signals?offset={offset}&limit=100&q=suppressed%3A"false"%20timestamp%3ANOW-14D..NOW'
+        cse_signals= f'https://{cse_tenant_name}.portal.jask.ai/api/v1/signals?offset={offset}&limit=100&q=suppressed%3A"false"%20timestamp%3ANOW-7D..NOW'
         r = requests.get(cse_signals, headers=headers)
         signals = r.json()['data']['objects']
         for signal in signals:
-            signal_id = signal['id']
-            cse_enrichment_url_base = f'https://{cse_tenant_name}.portal.jask.ai/api/v1/signals/{signal_id}/enrichments/'
-            signal_link = f'https://{cse_tenant_name}.portal.jask.ai/signal/{signal_id}/enrichments'
-                
-            ## RECORD LEVEL ENRICHMENTS BASED ON ATTRIBUTES 
-            for record in signal['allRecords']:
-                file_hash = None
-                ## ENRICHMENTS BASED ON FILE HASHES  
-                if 'file_hash_md5' in record:
-                    file_hash = record['file_hash_md5']
-                elif 'file_hash_sha1' in record: 
-                    file_hash = record['file_hash_sha1']
-                elif 'file_hash_sha256' in record:
-                    file_hash = record['file_hash_sha256']
+            if 'VirusTotal' not in signal['name']:
+                signal_id = signal['id']
+                cse_enrichment_url_base = f'https://{cse_tenant_name}.portal.jask.ai/api/v1/signals/{signal_id}/enrichments/'
+                signal_link = f'https://{cse_tenant_name}.portal.jask.ai/signal/{signal_id}/enrichments'
+                    
+                ## RECORD LEVEL ENRICHMENTS BASED ON ATTRIBUTES 
+                for record in signal['allRecords']:
+                    file_hash = None
+                    ## ENRICHMENTS BASED ON FILE HASHES  
+                    if 'file_hash_md5' in record:
+                        file_hash = record['file_hash_md5']
+                    elif 'file_hash_sha1' in record: 
+                        file_hash = record['file_hash_sha1']
+                    elif 'file_hash_sha256' in record:
+                        file_hash = record['file_hash_sha256']
 
-                if file_hash:
-                    handle_hash(file_hash)   
+                    if file_hash:
+                        handle_hash(file_hash)
+            else:
+                print('Skipping VT Signal')
 
         if r.json()['data']['hasNextPage'] != True:
             hasNextPage = False
