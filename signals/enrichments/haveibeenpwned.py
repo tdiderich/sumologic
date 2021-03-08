@@ -1,6 +1,7 @@
 import os
 import requests
 from ratelimit import limits, sleep_and_retry
+import datetime
 
 # environment variables
 cse_api_key = os.environ['CSE_API_KEY']
@@ -8,19 +9,31 @@ cse_headers = {'X-API-KEY': cse_api_key}
 cse_tenant_name = os.environ['CSE_TENANT_NAME']
 headers = {'X-API-KEY': cse_api_key}
        
-## VT enrichment config
+## haveibeenpwned config 
 hibp_key = os.environ['HIBP_API_KEY']
 hibp_headers = {'hibp-api-key': hibp_key}
+days_back = 180 
 
+# don't touch 
 hasNextPage = True
 offset = 0
+
+def days_between(date):
+    now = datetime.datetime.now()
+    breach_date = datetime.datetime.strptime(date[0:-1], "%Y-%m-%dT%H:%M:%S")
+    return abs((now - breach_date).days)
 
 @sleep_and_retry
 @limits(calls=1, period=1)
 def full_report(name):
     more = requests.get(f'https://haveibeenpwned.com/api/v3/breach/{name}', headers=hibp_headers)
     if more.status_code == 200: 
-        return more.json()
+        date = more.json()['AddedDate']
+        diff = days_between(date)
+        if diff < days_back:
+            return more.json()
+        else:
+            return None    
 
 @sleep_and_retry
 @limits(calls=1, period=1)
@@ -32,9 +45,12 @@ def enrich(record):
         for pwn in report:
             name = pwn['Name']
             more = full_report(name)
-            enrichment = {'detail': more, 'raw': name}
-            enrich = requests.put(cse_enrichment_url + name, headers=cse_headers, json=enrichment)
-        return enrich
+            if more: 
+                enrichment = {'detail': more, 'raw': name}
+                enrich = requests.put(cse_enrichment_url + name, headers=cse_headers, json=enrichment)
+                return enrich
+            else:
+                return None    
     else:
         return None
 
