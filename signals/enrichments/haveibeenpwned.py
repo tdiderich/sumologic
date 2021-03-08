@@ -16,14 +16,24 @@ hasNextPage = True
 offset = 0
 
 @sleep_and_retry
-@limits(calls=1, period=2)
+@limits(calls=1, period=1)
+def full_report(name):
+    more = requests.get(f'https://haveibeenpwned.com/api/v3/breach/{name}', headers=hibp_headers)
+    if more.status_code == 200: 
+        return more.json()
+
+@sleep_and_retry
+@limits(calls=1, period=1)
 def enrich(record):
     account = record['user_username_raw']
     report = requests.get(f'https://haveibeenpwned.com/api/v3/breachedaccount/{account}', headers=hibp_headers)
     if report.status_code == 200 and report:
         report = report.json()
-        enrichment = {'detail': report, 'raw': 'haveibeenpwned'}
-        enrich = requests.put(cse_enrichment_url, headers=cse_headers, json=enrichment)
+        for pwn in report:
+            name = pwn['Name']
+            more = full_report(name)
+            enrichment = {'detail': more, 'raw': name}
+            enrich = requests.put(cse_enrichment_url + name, headers=cse_headers, json=enrichment)
         return enrich
     else:
         return None
@@ -35,7 +45,7 @@ while hasNextPage:
     signals = r.json()['data']['objects']
     for signal in signals:
         signal_id = signal['id']
-        cse_enrichment_url = f'https://{cse_tenant_name}.portal.jask.ai/api/v1/signals/{signal_id}/enrichments/haveibeenpwned'
+        cse_enrichment_url = f'https://{cse_tenant_name}.portal.jask.ai/api/v1/signals/{signal_id}/enrichments/'
         signal_link = f'https://{cse_tenant_name}.portal.jask.ai/signal/{signal_id}'
         for record in signal['allRecords']:
             if 'user_username_raw' in record:
