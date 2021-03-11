@@ -4,7 +4,7 @@
 # What does it do?
 1. Creates a View CSE Role for customers to assign to users 
 2. Creates the _siemXXX Fields
-3. Creates a cCllector for Records, Signals, and Insights (with separate HTTP Sources)
+3. Creates a Collector for Records, Signals, and Insights (with separate HTTP Sources)
 4. Creates a Collector for CNC connections
 5. Creates 3 Partitions for Records, Signals, and Insights
 6. Creates an Insight Metrics folder with stock Insights content
