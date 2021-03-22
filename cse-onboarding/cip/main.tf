@@ -982,7 +982,7 @@ resource "sumologic_content" "cse_dashboards" {
             "description": "",
             "title": "CSE Record Dashboard",
             "rootPanel": null,
-            theme": "Dark",
+            "theme": "Dark",
             "topologyLabelMap": {
                 "data": {}
             },
@@ -1186,7 +1186,7 @@ resource "sumologic_content" "cse_dashboards" {
             "description": "",
             "title": "Office 365",
             "rootPanel": null,
-            theme": "Dark",
+            "theme": "Dark",
             "topologyLabelMap": {
                 "data": {}
             },
@@ -1588,7 +1588,7 @@ resource "sumologic_content" "cse_dashboards" {
             "description": "",
             "title": "Palo Alto",
             "rootPanel": null,
-            theme": "Dark",
+            "theme": "Dark",
             "topologyLabelMap": {
                 "data": {}
             },
@@ -1827,7 +1827,7 @@ resource "sumologic_content" "cse_dashboards" {
             "description": "",
             "title": "ProofPoint",
             "rootPanel": null,
-            theme": "Dark",
+            "theme": "Dark",
             "topologyLabelMap": {
                 "data": {}
             },
@@ -1891,7 +1891,7 @@ resource "sumologic_content" "cse_dashboards" {
             "description": "",
             "title": "Sample Searches",
             "rootPanel": null,
-            theme": "Dark",
+            "theme": "Dark",
             "topologyLabelMap": {
                 "data": {}
             },
@@ -2642,7 +2642,7 @@ resource "sumologic_content" "cse_dashboards" {
             "description": "",
             "title": "Trend Micro",
             "rootPanel": null,
-            theme": "Dark",
+            "theme": "Dark",
             "topologyLabelMap": {
                 "data": {}
             },
@@ -2706,7 +2706,7 @@ resource "sumologic_content" "cse_dashboards" {
             "description": "",
             "title": "Windows",
             "rootPanel": null,
-            theme": "Dark",
+            "theme": "Dark",
             "topologyLabelMap": {
                 "data": {}
             },
