@@ -28,7 +28,7 @@ def get_rules():
         url = f'https://{cse_tenant_name}.portal.jask.ai/api/v1/rules?&offset={offset}&limit=100'
         r = make_request(url, headers)
         for rule in r.json()['data']['objects']:
-            if 'expression' in rule and re.search('Bro', rule['expression']) is not None:
+            if 'expression' in rule:
                 row = dict()
                 if 'name' in rule:
                     row['RuleName'] = rule['name']
