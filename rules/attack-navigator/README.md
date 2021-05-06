@@ -1,6 +1,6 @@
 # TL;DR
 - This script generates the MITRE ATT&CK Navigator JSON that can be used here -> https://mitre-attack.github.io/attack-navigator/
-- The sample privded is from an internal Sumo Logic tenant
+- The sample provided is from an internal Sumo Logic tenant
 
 # Required environment variables
 1. CSE_API_KEY
