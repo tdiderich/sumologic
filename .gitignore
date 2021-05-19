@@ -4,3 +4,13 @@ cip/fields/results_all_fields.json
 cip/fields/results_unused_fields.json
 cip/fields/results_used_fields.json
 cip/users/users.csv
+cse-onboarding/cip/terraform.tfstate
+cse-onboarding/cip/.terraform/plugins/selections.json
+cse-onboarding/cip/.terraform/plugins/registry.terraform.io/sumologic/sumologic/2.9.0/darwin_amd64/CHANGELOG.md
+cse-onboarding/cip/.terraform/plugins/registry.terraform.io/sumologic/sumologic/2.9.0/darwin_amd64/LICENSE
+cse-onboarding/cip/.terraform/plugins/registry.terraform.io/sumologic/sumologic/2.9.0/darwin_amd64/README.md
+cse-onboarding/cip/.terraform/plugins/registry.terraform.io/sumologic/sumologic/2.9.0/darwin_amd64/terraform-provider-sumologic_v2.9.0
+cip-cse-sync/dashboard-on-insight/templates.py
+cip-cse-sync/dashboard-on-insight/sync.py
+cip-cse-sync/dashboard-on-insight/get_personal_folder.py
+rules/rules-to-sheet/rules.csv

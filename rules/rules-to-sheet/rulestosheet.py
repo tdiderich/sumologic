@@ -52,7 +52,7 @@ def get_rules():
         else:
             hasNextPage = False    
     
-    df.to_csv('rules.csv')                
+    df.to_csv('./rules.csv')                
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO,

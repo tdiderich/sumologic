@@ -3,7 +3,7 @@ import requests
 import logging
 from requests.auth import HTTPBasicAuth
 from datetime import date, time, datetime, timedelta
-
+import json
 
 # environment variables
 cip_access_id = os.environ['CIP_ACCESS_ID']
@@ -11,8 +11,8 @@ cip_access_key = os.environ['CIP_ACCESS_KEY']
 cip_deployment = os.environ['CIP_DEPLOYMENT']
 
 # variables to update
-query = '_sourcecategory=* | count'
-lookback = 15 # minutes
+query='_sourceCategory=* | count'
+lookback = 5 # minutes
 query_type = 'agg' # agg OR raw 
 
 # variables to not touch 

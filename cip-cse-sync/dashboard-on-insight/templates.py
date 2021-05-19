@@ -57,5 +57,3 @@ def awesome_user_dash(user_username, insight_id, folder_id):
             "coloringRules": []
         }
     return dashboard 
-
-    

@@ -10,10 +10,10 @@ headers = {'X-API-KEY': cse_api_key}
 
 # update 
 query = '-status%3A"closed"'
-fields = '&recordSummaryFields=device_ip,device_hostname,user_username'
+fields = '&recordSummaryFields=bytesIn,bytesOut,dstPort,device_hostname,device_hostname_raw,file_basename,file_path,device_ip,file_hash_md5,http_url,file_hash_sha256,srcPort,threat_name,user_username,http_userAgent'
 
 # do not touch
-url = f'https://{cse_tenant_name}.portal.jask.ai/api/v1/insights?q={query}'
+url = f'https://{cse_tenant_name}.portal.jask.ai/api/v1/insights?q={query}{fields}'
 api_key = 'KEY'
 headers = {'X-API-KEY': cse_api_key}
 
