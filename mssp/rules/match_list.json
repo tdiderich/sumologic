@@ -1,6 +1,7 @@
 {
    "orgIds": [
-      "00000000009B8904"
+      "id1",
+      "id2"
    ],
   "fields": {
     "assetField": "device_hostname",

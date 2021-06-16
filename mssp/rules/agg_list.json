@@ -1,6 +1,7 @@
 {
    "orgIds": [
-      "00000000005808D4"
+      "id1",
+      "id2"
    ],
    "fields": {
       "aggregationFunctions": [
