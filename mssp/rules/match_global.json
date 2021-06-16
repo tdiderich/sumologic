@@ -5,7 +5,7 @@
   "fields": {
     "assetField": "device_hostname",
     "category": "Unknown/Other",
-    "descriptionExpression": "MSSP-MATCH-US2",
+    "descriptionExpression": "MSSP-MATCH",
     "enabled": true,
     "entitySelectors": [
       {
@@ -15,8 +15,8 @@
     ],
     "expression": "metadata_vendor=\"foo\"",
     "isPrototype": true,
-    "name": "MSSP-MATCH-US2",
-    "nameExpression": "MSSP-MATCH-US2",
+    "name": "MSSP-MATCH",
+    "nameExpression": "MSSP-MATCH",
     "scoreMapping": {
          "type": "constant",
          "default": 0,
@@ -24,9 +24,9 @@
          "mapping": []
       },
     "stream": "record",
-    "summaryExpression": "MSSP-MATCH-US2",
+    "summaryExpression": "MSSP-MATCH",
     "tags": [
-      "MSSP-MATCH-US2"
+      "MSSP-MATCH"
     ]
   }
 }

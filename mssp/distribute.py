@@ -38,12 +38,12 @@ def handle_rules(files, deployment, org_id, access_id, access_key):
     for file in files:
         f=open(file, 'r')
         f=json.loads(f.read())
-        rule_name = f['fields']['name']
-        rules.append(rule_name)
         org_ids = f['orgIds']
         uri = get_rule_uri(f)
         for org in org_ids:
             if org == 'global' or org == org_id:
+                rule_name = f['fields']['name']
+                rules.append(rule_name)
                 check_url = base_url + f'rules?q=name%3A"{rule_name}"'
                 r = requests.get(check_url, auth=HTTPBasicAuth(access_id, access_key))
                 if r.status_code < 400:
