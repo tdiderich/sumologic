@@ -16,3 +16,24 @@
 2. Uses the orgIds field to determine if that rule should be uploaded for the current tenant 
 3. Checks if the rule already exists - if yes, updates the existing rule, if no, creates the rule 
 4. Disbles all custom rules that are not in the folder to avoid duplication
+
+# Sample Output
+1. Changed rule name from MSSP-AGG to MSSP-AGG-CHANGED-NAME (added new/deleted old)
+2. Added new rule called MSSP-AGG-NEW-RULE (added)
+
+```
+Processing rules for customer: 00000000009B8904
+action: updated, target: CHAIN-U00001
+action: added, target: MSSP-AGG-CHANGED-NAME
+action: updated, target: MATCH-U00002
+action: updated, target: THRESHOLD-U00002
+action: added, target: MSSP-AGG-NEW-RULE
+action: deleted, target:  AGGREGATION-U00008
+Processing rules for customer: 00000000005808D4
+action: updated, target: CHAIN-U00002
+action: added, target: MSSP-AGG-CHANGED-NAME
+action: updated, target: MATCH-U00004
+action: updated, target: THRESHOLD-U00001
+action: added, target: MSSP-AGG-NEW-RULE
+action: deleted, target:  AGGREGATION-U00007
+```

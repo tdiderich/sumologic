@@ -30,7 +30,7 @@ def handle_deletes(rules, deployment, org_id, access_id, access_key):
             if delete_rule.status_code > 202:
                 print(delete_rule.text)
             else:
-                print('deleted rule -> ', rule['name'])
+                print('action: deleted, target: ', rule['id'])
 
 def handle_rules(files, deployment, org_id, access_id, access_key):
     base_url = f'https://api.{deployment}.sumologic.com/api/sec/v1/'
@@ -59,14 +59,14 @@ def handle_rules(files, deployment, org_id, access_id, access_key):
                         if update.status_code > 202:
                             print(update.text)
                         else:
-                            print(f'updated {id} on {org_id}')
+                            print(f'action: updated, target: {id}')
                     else:
                         add_url = base_url + uri
                         add = requests.post(add_url, auth=HTTPBasicAuth(access_id, access_key), json=payload)
                         if add.status_code > 202:
                             print(add.status_code)
                         else:
-                            print(f'added {uri} to {org_id}')
+                            print(f'action: added, target: {rule_name}')
 
                 else:
                     print(r.text)
@@ -78,5 +78,6 @@ if __name__ == '__main__':
     with open('./config.json') as f:
         config = json.load(f)
     for customer in config:
+        print('Processing rules for customer: ' + customer['orgId'])
         rules = handle_rules(files, customer['deployment'], customer['orgId'], customer['accessId'], customer['accessKey'])
         handle_deletes(rules, customer['deployment'], customer['orgId'], customer['accessId'], customer['accessKey'])
