@@ -1,0 +1,45 @@
+{
+   "orgIds": [
+      "00000000005808D4"
+   ],
+   "fields": {
+      "aggregationFunctions": [
+         {
+            "name": "bar",
+            "function": "count",
+            "arguments": [
+               "metadata_product=\"bar\""
+            ]
+         }
+      ],
+      "assetField": "device_hostname",
+      "category": "Unknown/Other",
+      "descriptionExpression": "MSSP-AGG-SYD",
+      "enabled": true,
+      "entitySelectors": [
+         {
+            "expression": "device_hostname",
+            "entityType": "_hostname"
+         }
+      ],
+      "groupByAsset": true,
+      "groupByFields": ["device_hostname"],
+      "isPrototype": true,
+      "matchExpression": "metadata_vendor=\"foo\"",
+      "name": "MSSP-AGG-SYD",
+      "nameExpression": "MSSP-AGG-SYD",
+      "scoreMapping": {
+         "type": "constant",
+         "default": 0,
+         "field": "",
+         "mapping": []
+      },
+      "stream": "record",
+      "summaryExpression": "MSSP-AGG-SYD",
+      "tags": [
+         "MSSP-AGG-SYD"
+      ],
+      "triggerExpression": "bar>999999999999999999",
+      "windowSize": "T05D"
+   }
+}

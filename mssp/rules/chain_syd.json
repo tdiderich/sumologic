@@ -1,0 +1,37 @@
+{
+   "orgIds": [
+      "00000000005808D4"
+   ],
+  "fields": {
+    "assetField": "device_hostname",
+    "category": "Unknown/Other",
+    "description": "MSSP-CHAIN-SYD",
+    "enabled": true,
+    "entitySelectors": [
+      {
+        "entityType": "_hostname",
+        "expression": "device_hostname"
+      }
+    ],
+    "expressionsAndLimits": [
+      {
+        "expression": "metadata_vendor=\"foo\"",
+        "limit": 100
+      },
+      {
+        "expression": "metadata_vendor=\"bar\"",
+        "limit": 100
+      }
+    ],
+    "isPrototype": true,
+    "name": "MSSP-CHAIN-SYD",
+    "ordered": true,
+    "score": 1,
+    "stream": "record",
+    "summaryExpression": "MSSP-CHAIN-SYD",
+    "tags": [
+      "MSSP-CHAIN-SYD"
+    ],
+    "windowSize": "T05D"
+  }
+}

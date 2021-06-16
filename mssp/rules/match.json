@@ -1,0 +1,32 @@
+{
+   "orgIds": [
+      "global"
+   ],
+  "fields": {
+    "assetField": "device_hostname",
+    "category": "Unknown/Other",
+    "descriptionExpression": "MSSP-MATCH-US2",
+    "enabled": true,
+    "entitySelectors": [
+      {
+        "entityType": "_hostname",
+        "expression": "device_hostname"
+      }
+    ],
+    "expression": "metadata_vendor=\"foo\"",
+    "isPrototype": true,
+    "name": "MSSP-MATCH-US2",
+    "nameExpression": "MSSP-MATCH-US2",
+    "scoreMapping": {
+         "type": "constant",
+         "default": 0,
+         "field": "",
+         "mapping": []
+      },
+    "stream": "record",
+    "summaryExpression": "MSSP-MATCH-US2",
+    "tags": [
+      "MSSP-MATCH-US2"
+    ]
+  }
+}

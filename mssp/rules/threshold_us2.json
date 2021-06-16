@@ -1,0 +1,31 @@
+{
+   "orgIds":[
+      "00000000009B8904"
+   ],
+   "fields":{
+      "assetField":"device_hostname",
+      "category":"Unknown/Other",
+      "countDistinct":true,
+      "countField":"user_username",
+      "description":"MSSP-THRESHOLD-US2",
+      "enabled":true,
+      "entitySelectors":[
+         {
+            "expression":"device_hostname",
+            "entityType":"_hostname"
+         }
+      ],
+      "expression":"metadata_vendor=\"foo\"",
+      "isPrototype":true,
+      "limit":10,
+      "name":"MSSP-THRESHOLD-US2",
+      "score":0,
+      "stream":"record",
+      "summaryExpression":"MSSP-THRESHOLD-US2",
+      "tags":[
+         "MSSP-THRESHOLD-US2"
+      ],
+      "version":0,
+      "windowSize":"T05D"
+   }
+}

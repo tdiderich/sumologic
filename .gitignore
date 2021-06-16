@@ -14,3 +14,4 @@ cip-cse-sync/dashboard-on-insight/templates.py
 cip-cse-sync/dashboard-on-insight/sync.py
 cip-cse-sync/dashboard-on-insight/get_personal_folder.py
 rules/rules-to-sheet/rules.csv
+mssp/config.json

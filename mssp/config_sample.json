@@ -1,0 +1,19 @@
+[
+    {
+    "deployment": "foo",
+    "orgid": "bar",
+    "accessKey": "foo",
+    "secretKey": "bar"
+    },
+    {
+    "deployment": "foo",
+    "orgid": "bar",
+    "accessKey": "foo",
+    "secretKey": "bar"
+    },
+    {
+    "deployment": "foo",
+    "orgid": "bar",
+    "accessKey": "foo",
+    "secretKey": "bar"
+    }]
