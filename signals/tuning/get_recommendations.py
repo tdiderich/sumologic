@@ -108,8 +108,8 @@ if __name__ == '__main__':
         tuning_clusters_query = f'_sourceCategory=asoc/SIGNAL/* {rule_name} | json field=_raw "rule_name" nodrop | where rule_name = "{rule_name}" | json field=_raw "asset.name" as entity nodrop | json field=_raw "full_records[0].baseImage" as baseImage nodrop | json field=_raw "full_records[0].parentBaseImage" as parentBaseImage nodrop | json field=_raw "full_records[0].action" as action nodrop | json field=_raw "full_records[0].commandLine" as commandLine nodrop | json field=_raw "full_records[0].listMatches" as listMatches nodrop | json field=_raw "full_records[0].user_username" as user_username nodrop | json field=_raw "full_records[0].device_hostname" as device_hostname nodrop | json field=_raw "full_records[0].device_ip" as device_ip nodrop | json field=_raw "full_records[0].http_url_rootDomain" as http_url_rootDomain nodrop | logreduce values on entity, action, listMatches, baseImage, parentBaseImage, commandLine, user_username, device_hostname, device_ip, http_url_rootDomain | order by _count | limit 10'
         clusters_search_id = start(tuning_clusters_query, lookback)
         clusters = check(clusters_search_id, query_type)
-        print(f'\n--- Top Clusters ---\n')
         if len(clusters) > 0:
+            print(f'\n--- Top Clusters ---\n')
             for c in clusters:
                 print(c['_signature'])
         else:
