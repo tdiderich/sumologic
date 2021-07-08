@@ -82,40 +82,43 @@ def check(search_id, query_type):
 if __name__ == '__main__':
 
     # variables to update
-    top_10_query='_sourceCategory=asoc/SIGNAL/* | json field=_raw "rule_name" | count by rule_name | order by _count | limit 10'
+    top_10_query='_sourceCategory=asoc/SIGNAL/* | json field=_raw "rule_name" | count by rule_name | where _count > 1000 | order by _count | limit 10'
     lookback = 10080 # minutes in week
     query_type = 'agg' # agg OR raw 
     
     # get top 10
     search_id = start(top_10_query, lookback)
-    top_10_rules = check(search_id, query_type)
+    top_rules = check(search_id, query_type)
 
-    # loop through top ten to get top ten entities + tuning clusters 
-    for rule in top_10_rules:
-        rule_name = rule['rule_name']
-        print(f'\n--- Gathering Tuning Recommendations for {rule_name} ---')
+    if len(top_rules) > 0:
+        # loop through top ten to get top ten entities + tuning clusters 
+        for rule in top_rules:
+            rule_name = rule['rule_name']
+            print(f'\n--- Gathering Tuning Recommendations for {rule_name} ---')
 
-        # get top entities 
-        ## must have >1000 hits 
-        tuning_entities_query = f'_sourceCategory=asoc/SIGNAL/* "{rule_name}" | json field=_raw "rule_name" nodrop | where rule_name = "{rule_name}" | json field=_raw "asset.name" as entity nodrop | count entity | where _count > 1000 | order by _count | limit 10'
-        entities_search_id = start(tuning_entities_query, lookback)
-        top_entities = check(entities_search_id, query_type)
-        if len(top_entities) > 0:
-            print(f'\n--- Top Entities ---\n')
-            for e in top_entities:
-                print(e)
-        else:
-            print(f'\n--- No Entities Found with Over 1000 Hits ---\n')
-        
-        # get clusters
-        ### clusters look for patterns with the logreduce based on common fields used for tuning 
-        ### fields used -> entity, baseImage, parentBaseImage, action, commandLine, listMatches, user_username, device_hostname, device_ip, http_url_rootDomain
-        tuning_clusters_query = f'_sourceCategory=asoc/SIGNAL/* {rule_name} | json field=_raw "rule_name" nodrop | where rule_name = "{rule_name}" | json field=_raw "asset.name" as entity nodrop | json field=_raw "full_records[0].baseImage" as baseImage nodrop | json field=_raw "full_records[0].parentBaseImage" as parentBaseImage nodrop | json field=_raw "full_records[0].action" as action nodrop | json field=_raw "full_records[0].commandLine" as commandLine nodrop | json field=_raw "full_records[0].listMatches" as listMatches nodrop | json field=_raw "full_records[0].user_username" as user_username nodrop | json field=_raw "full_records[0].device_hostname" as device_hostname nodrop | json field=_raw "full_records[0].device_ip" as device_ip nodrop | json field=_raw "full_records[0].http_url_rootDomain" as http_url_rootDomain nodrop | logreduce values on entity, action, listMatches, baseImage, parentBaseImage, commandLine, user_username, device_hostname, device_ip, http_url_rootDomain | order by _count | limit 10'
-        clusters_search_id = start(tuning_clusters_query, lookback)
-        clusters = check(clusters_search_id, query_type)
-        if len(clusters) > 0:
-            print(f'\n--- Top Clusters ---\n')
-            for c in clusters:
-                print(c['_signature'])
-        else:
-            print(f'\n--- No Relevant Clusters Found ---\n')
+            # get top entities 
+            ## must have >1000 hits 
+            tuning_entities_query = f'_sourceCategory=asoc/SIGNAL/* "{rule_name}" | json field=_raw "rule_name" nodrop | where rule_name = "{rule_name}" | json field=_raw "asset.name" as entity nodrop | count entity | where _count > 1000 | order by _count | limit 10'
+            entities_search_id = start(tuning_entities_query, lookback)
+            top_entities = check(entities_search_id, query_type)
+            if len(top_entities) > 0:
+                print(f'\n--- Top Entities ---\n')
+                for e in top_entities:
+                    print(e)
+            else:
+                print(f'\n--- No Entities Found with Over 1000 Hits ---\n')
+            
+            # get clusters
+            ### clusters look for patterns with the logreduce based on common fields used for tuning 
+            ### fields used -> entity, baseImage, parentBaseImage, action, commandLine, listMatches, user_username, device_hostname, device_ip, http_url_rootDomain
+            tuning_clusters_query = f'_sourceCategory=asoc/SIGNAL/* {rule_name} | json field=_raw "rule_name" nodrop | where rule_name = "{rule_name}" | json field=_raw "asset.name" as entity nodrop | json field=_raw "full_records[0].baseImage" as baseImage nodrop | json field=_raw "full_records[0].parentBaseImage" as parentBaseImage nodrop | json field=_raw "full_records[0].action" as action nodrop | json field=_raw "full_records[0].commandLine" as commandLine nodrop | json field=_raw "full_records[0].listMatches" as listMatches nodrop | json field=_raw "full_records[0].user_username" as user_username nodrop | json field=_raw "full_records[0].device_hostname" as device_hostname nodrop | json field=_raw "full_records[0].device_ip" as device_ip nodrop | json field=_raw "full_records[0].http_url_rootDomain" as http_url_rootDomain nodrop | logreduce values on entity, action, listMatches, baseImage, parentBaseImage, commandLine, user_username, device_hostname, device_ip, http_url_rootDomain | order by _count | limit 10'
+            clusters_search_id = start(tuning_clusters_query, lookback)
+            clusters = check(clusters_search_id, query_type)
+            if len(clusters) > 0:
+                print(f'\n--- Top Clusters ---\n')
+                for c in clusters:
+                    print(c['_signature'])
+            else:
+                print(f'\n--- No Relevant Clusters Found ---\n')
+    else:
+        print('--- No Rules Found with Over 1000 Hits ---')
