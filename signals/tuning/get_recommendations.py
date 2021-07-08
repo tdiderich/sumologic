@@ -10,9 +10,14 @@ cip_access_id = os.environ['CIP_ACCESS_ID']
 cip_access_key = os.environ['CIP_ACCESS_KEY']
 cip_deployment = os.environ['CIP_DEPLOYMENT']
 
-# variables to not touch 
-query_url = f'https://api.{cip_deployment}.sumologic.com/api/v1/search/jobs'
-check_base_url = f'https://api.{cip_deployment}.sumologic.com/api/v1/search/jobs/'
+if cip_deployment == 'long':
+    # variables to not touch 
+    query_url = f'https://long-api.sumologic.net/api/v1/search/jobs'
+    check_base_url = f'https://long-api.sumologic.net/api/v1/search/jobs/'
+else:
+    # variables to not touch 
+    query_url = f'https://api.{cip_deployment}.sumologic.com/api/v1/search/jobs'
+    check_base_url = f'https://api.{cip_deployment}.sumologic.com/api/v1/search/jobs/'
 
 def start(query, lookback):
     start = (datetime.now() - timedelta(minutes=lookback)).strftime('%Y-%m-%dT%H:%M:%S')
