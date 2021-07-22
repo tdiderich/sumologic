@@ -28,23 +28,17 @@ def get_rules():
         url = f'https://{cse_tenant_name}.portal.jask.ai/api/v1/rules?&offset={offset}&limit=100'
         r = make_request(url, headers)
         for rule in r.json()['data']['objects']:
-            if 'expression' in rule:
-                row = dict()
-                if 'name' in rule:
-                    row['RuleName'] = rule['name']
-                else:
-                    row['RuleName'] = 'N/A'    
-                if 'expression' in rule:
-                    row['RuleLogic'] = rule['expression']
-                else:
-                    row['RuleLogic'] = 'N/A'    
-                if 'description' in rule:
-                    row['RuleDescription'] = rule['description']
-                elif 'descriptionExpression' in rule:
-                    row['RuleDescription'] = rule['descriptionExpression']   
-                else:
-                        row['RuleDescription'] = 'N/A'  
-                df = df.append(row, ignore_index=True)      
+            row = dict()
+            row['RuleName'] = rule.get('name', 'N/A')   
+            row['RuleLogic'] = rule.get('expression', 'N/A')
+            if 'expressionsAndLimits' in rule:
+                row['RuleLogic'] = rule.get('expressionsAndLimits')[0].get('expression', 'N/A')
+            if 'matchExpression' in rule:
+                row['RuleLogic'] = rule.get('matchExpression', 'N/A')
+            row['RuleDescription'] = rule.get('description', 'N/A')
+            row['RuleDescription'] = rule.get('descriptionExpression', row['RuleDescription'])
+            df = df.append(row, ignore_index=True) 
+                     
 
         if (r.json()['data']['hasNextPage'] == True):
             hasNextPage = True
