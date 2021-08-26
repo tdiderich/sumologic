@@ -1,16 +1,13 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[dev-packages]
+name = "pypi"
 
 [packages]
 requests = "*"
-csv = "*"
-logging = "*"
 datetime = "*"
-json = "*"
+
+[dev-packages]
 
 [requires]
 python_version = "3.8"
